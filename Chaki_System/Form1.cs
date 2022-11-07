@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SQLite;
 
 namespace Chaki_System
 {
@@ -17,5 +18,14 @@ namespace Chaki_System
             InitializeComponent();
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //この画面を非表示にする
+            this.Visible = false;
+
+            //Form2に遷移する
+            Form2 f2 = new Form2();
+            f2.Show();
+        }
     }
 }
