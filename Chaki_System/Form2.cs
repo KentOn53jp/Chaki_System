@@ -28,13 +28,13 @@ namespace Chaki_System
 
         private void button1_Click(object sender, EventArgs e)
         {
-            using (var con = new SQLiteConnection("Data Source=test.db"))
+            using (var con = new SQLiteConnection("Data Source=HCS.db"))
             {
                 con.Open();
                 using (SQLiteCommand command = con.CreateCommand())
                 {
                     command.CommandText =
-                        "create table IF NOT EXISTS t_product(CD INTEGER  PRIMARY KEY AUTOINCREMENT, name TEXT, Nambers INTEGER, address TEXT, Phone_Nomber INTEGER,  birhtday NUMERIC)";
+                        "create table IF NOT EXISTS t_product(CD INTEGER  PRIMARY KEY AUTOINCREMENT, Name TEXT, Numbers INTEGER, address TEXT, PhoneNomber INTEGER,  birhtday INTEGER)";
                     command.ExecuteNonQuery();
                 }
                 con.Close();
