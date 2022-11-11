@@ -34,7 +34,7 @@ namespace Chaki_System
                 using (SQLiteCommand command = con.CreateCommand())
                 {
                     command.CommandText =
-                        "create table IF NOT EXISTS t_product(CD INTEGER  PRIMARY KEY AUTOINCREMENT, Name TEXT, Numbers INTEGER, address TEXT, PhoneNomber INTEGER,  birhtday INTEGER)";
+                        "create table IF NOT EXISTS t_product(CD INTEGER  PRIMARY KEY AUTOINCREMENT, Name TEXT, Numbers INTEGER, Address TEXT, PhoneNumber INTEGER,  Birhtday INTEGER)";
                     command.ExecuteNonQuery();
                 }
                 con.Close();

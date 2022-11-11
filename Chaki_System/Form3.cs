@@ -11,13 +11,9 @@ namespace Chaki_System
 {
     public partial class Form3 : Form
     {
-        public Form3(DataGridView dataGridView1)
-        {
-            InitializeComponent();
-        }
-
         public Form3()
         {
+            InitializeComponent();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -44,29 +40,10 @@ namespace Chaki_System
             Form4 f4 = new Form4();
             f4.Show();
 
-            using (SQLiteConnection con = new SQLiteConnection("Data Source=HCS.db"))
-            {
-                con.Open();
-                using (SQLiteTransaction trans = con.BeginTransaction())
-                {
-                    SQLiteCommand cmd = con.CreateCommand();
-                    // インサート
-                    cmd.CommandText = "INSERT INTO t_product (Name, address, Phone_Nomber, birhtday) VALUES (@Name, @address, @PhoneNomber, @Birhtday)";
-                    // パラメータセット
-                    cmd.Parameters.Add("Name", System.Data.DbType.String);
-                    cmd.Parameters.Add("Address", System.Data.DbType.String);
-                    cmd.Parameters.Add("PhoneNomber", System.Data.DbType.String);
-                    cmd.Parameters.Add("Birhtday", System.Data.DbType.String);
-                    // データ追加
-                    cmd.Parameters["Name"].Value = textBox1.Text;
-                    cmd.Parameters["Address"].Value = textBox2.Text;
-                    cmd.Parameters["PhoneNomber"].Value = textBox3.Text;
-                    cmd.Parameters["Birhtday"].Value = textBox4.Text;
-                    cmd.ExecuteNonQuery();
-                    // コミット
-                    trans.Commit();
-                }
-            }
+            f4.textBox1.Text = textBox1.Text;
+            f4.textBox2.Text = textBox2.Text;
+            f4.textBox3.Text = textBox3.Text;
+            f4.textBox4.Text = textBox4.Text;
         }
 
         private void button3_Click(object sender, EventArgs e)
