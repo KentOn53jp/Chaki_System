@@ -64,6 +64,10 @@ namespace Chaki_System
                     trans.Commit();
                 }
             }
+
+            MessageBox.Show("登録しました", "登録");
+            Form2 f2 = new Form2();
+            f2.Show();
         }
     }
 }
