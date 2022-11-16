@@ -32,3 +32,5 @@ C:\Users\s20217064\Desktop\Chaki_System\Chaki_System\obj\Debug\netcoreapp3.1\Cha
 C:\Users\s20217064\Desktop\Chaki_System\Chaki_System\obj\Debug\netcoreapp3.1\Chaki_System.genruntimeconfig.cache
 C:\Users\s20217064\Desktop\Chaki_System\Chaki_System\obj\Debug\netcoreapp3.1\Chaki_System.Form3.resources
 C:\Users\s20217064\Desktop\Chaki_System\Chaki_System\obj\Debug\netcoreapp3.1\Chaki_System.Form4.resources
+C:\Users\s20217064\Desktop\Chaki_System\Chaki_System\obj\Debug\netcoreapp3.1\Chaki_System.Form5.resources
+C:\Users\s20217064\Desktop\Chaki_System\Chaki_System\obj\Debug\netcoreapp3.1\Chaki_System.Form6.resources

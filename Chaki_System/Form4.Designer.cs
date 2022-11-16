@@ -64,7 +64,7 @@ namespace Chaki_System
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(165, 52);
+            this.label1.Location = new System.Drawing.Point(211, 52);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(39, 20);
             this.label1.TabIndex = 3;
@@ -73,7 +73,7 @@ namespace Chaki_System
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(532, 52);
+            this.label2.Location = new System.Drawing.Point(574, 52);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(39, 20);
             this.label2.TabIndex = 4;
@@ -82,7 +82,7 @@ namespace Chaki_System
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(165, 169);
+            this.label3.Location = new System.Drawing.Point(198, 169);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(69, 20);
             this.label3.TabIndex = 5;
@@ -91,7 +91,7 @@ namespace Chaki_System
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(532, 169);
+            this.label4.Location = new System.Drawing.Point(558, 170);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(69, 20);
             this.label4.TabIndex = 6;

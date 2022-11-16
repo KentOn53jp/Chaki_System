@@ -42,10 +42,30 @@ namespace Chaki_System
                 //この画面を非表示にする
                 this.Visible = false;
 
-                //Form1に遷移する
+                //Form3に遷移する
                 Form3 f3 = new Form3();
                 f3.Show();
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            //この画面を非表示にする
+            this.Visible = false;
+
+            //Form5に遷移する
+            Form5 f5 = new Form5();
+            f5.Show();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form2_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
