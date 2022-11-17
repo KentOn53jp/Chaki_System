@@ -34,3 +34,6 @@ C:\Users\s20217064\Desktop\Chaki_System\Chaki_System\obj\Debug\netcoreapp3.1\Cha
 C:\Users\s20217064\Desktop\Chaki_System\Chaki_System\obj\Debug\netcoreapp3.1\Chaki_System.Form4.resources
 C:\Users\s20217064\Desktop\Chaki_System\Chaki_System\obj\Debug\netcoreapp3.1\Chaki_System.Form5.resources
 C:\Users\s20217064\Desktop\Chaki_System\Chaki_System\obj\Debug\netcoreapp3.1\Chaki_System.Form6.resources
+C:\Users\s20217064\Desktop\Chaki_System\Chaki_System\obj\Debug\netcoreapp3.1\Chaki_System.Form7.resources
+C:\Users\s20217064\Desktop\Chaki_System\Chaki_System\obj\Debug\netcoreapp3.1\Chaki_System.Form8.resources
+C:\Users\s20217064\Desktop\Chaki_System\Chaki_System\obj\Debug\netcoreapp3.1\Chaki_System.Form9.resources

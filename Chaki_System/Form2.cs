@@ -34,7 +34,7 @@ namespace Chaki_System
                 using (SQLiteCommand command = con.CreateCommand())
                 {
                     command.CommandText =
-                        "create table IF NOT EXISTS t_product(CD INTEGER  PRIMARY KEY AUTOINCREMENT, Name TEXT, Numbers INTEGER, Address TEXT, PhoneNumber INTEGER,  Birhtday INTEGER)";
+                        "create table IF NOT EXISTS t_product(CD INTEGER  PRIMARY KEY AUTOINCREMENT, Name TEXT, Numbers INTEGER, Address TEXT, PhoneNumber INTEGER,  Birhtday INTEGER, Pass TEXT)";
                     command.ExecuteNonQuery();
                 }
                 con.Close();
@@ -66,6 +66,16 @@ namespace Chaki_System
         private void Form2_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            //この画面を非表示にする
+            this.Visible = false;
+
+            //Form5に遷移する
+            Form7 f7 = new Form7();
+            f7.Show();
         }
     }
 }

@@ -9,9 +9,9 @@ using System.Data.SQLite;
 
 namespace Chaki_System
 {
-    public partial class Form5 : Form
+    public partial class Form7 : Form
     {
-        public Form5()
+        public Form7()
         {
             InitializeComponent();
         }
@@ -19,8 +19,8 @@ namespace Chaki_System
         private void button1_Click(object sender, EventArgs e)
         {
             this.Visible = false;
-            Form6 f6 = new Form6();
-            f6.Show();
+            Form8 f8 = new Form8();
+            f8.Show();
 
             using (SQLiteConnection con = new SQLiteConnection("Data Source=HCS.db"))
             {
@@ -42,7 +42,7 @@ namespace Chaki_System
                 dataTable.Clear();
                 dataTable.Load(cmd.ExecuteReader());
 
-                f6.dataGridView1.DataSource = dataTable;
+                f8.dataGridView1.DataSource = dataTable;
 
                 con.Close();
             }
@@ -54,11 +54,5 @@ namespace Chaki_System
             Form2 f2 = new Form2();
             f2.Show();
         }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-
-        }
-
     }
 }
