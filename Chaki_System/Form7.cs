@@ -21,6 +21,7 @@ namespace Chaki_System
             this.Visible = false;
             Form8 f8 = new Form8();
             f8.Show();
+            f8.textBox5.Text = textBox1.Text;
 
             using (SQLiteConnection con = new SQLiteConnection("Data Source=HCS.db"))
             {
@@ -31,13 +32,13 @@ namespace Chaki_System
                 var dataTable = new DataTable();
 
                 // SQLの実行
-                cmd.CommandText = "SELECT * FROM t_product WHERE Name = @Name or CD = @CD";
+                cmd.CommandText = "SELECT * FROM t_product WHERE CD = @CD AND Pass = @Pass";
                 //パラメータの型を設定
-                cmd.Parameters.Add("Name", System.Data.DbType.String);
                 cmd.Parameters.Add("CD", System.Data.DbType.String);
-                //textbox1
-                cmd.Parameters["Name"].Value = textBox1.Text;
+                cmd.Parameters.Add("Pass", System.Data.DbType.String);
+
                 cmd.Parameters["CD"].Value = textBox1.Text;
+                cmd.Parameters["Pass"].Value = textBox3.Text;
 
                 dataTable.Clear();
                 dataTable.Load(cmd.ExecuteReader());
@@ -53,6 +54,11 @@ namespace Chaki_System
             this.Visible = false;
             Form2 f2 = new Form2();
             f2.Show();
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

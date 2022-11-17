@@ -132,13 +132,13 @@ namespace Chaki_System
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(372, 242);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(50, 20);
+            this.label5.Size = new System.Drawing.Size(64, 20);
             this.label5.TabIndex = 11;
-            this.label5.Text = "label5";
+            this.label5.Text = "パスワード";
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(372, 285);
+            this.textBox5.Location = new System.Drawing.Point(347, 265);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(125, 27);
             this.textBox5.TabIndex = 12;

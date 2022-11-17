@@ -33,18 +33,26 @@ namespace Chaki_System
 
         private void button2_Click(object sender, EventArgs e)
         {
-            //この画面を非表示にする
-            this.Visible = false;
+            int Max = 3;
+            if(textBox5.TextLength < Max)
+            {
+                MessageBox.Show("４文字以上入力してください。","エラー", MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
+            else
+            {
+                //この画面を非表示にする
+                this.Visible = false;
 
-            //Form1に遷移する
-            Form4 f4 = new Form4();
-            f4.Show();
+                //Form1に遷移する
+                Form4 f4 = new Form4();
+                f4.Show();
 
-            f4.textBox1.Text = textBox1.Text;
-            f4.textBox2.Text = textBox2.Text;
-            f4.textBox3.Text = textBox3.Text;
-            f4.textBox4.Text = textBox4.Text;
-            f4.textBox5.Text = textBox5.Text;
+                f4.textBox1.Text = textBox1.Text;
+                f4.textBox2.Text = textBox2.Text;
+                f4.textBox3.Text = textBox3.Text;
+                f4.textBox4.Text = textBox4.Text;
+                f4.textBox5.Text = textBox5.Text;
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)

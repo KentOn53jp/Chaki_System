@@ -38,11 +38,11 @@ namespace Chaki_System
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(305, 151);
+            this.label1.Location = new System.Drawing.Point(351, 152);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(146, 20);
+            this.label1.Size = new System.Drawing.Size(64, 20);
             this.label1.TabIndex = 0;
-            this.label1.Text = "氏名または番号を入力";
+            this.label1.Text = "パスワード";
             // 
             // textBox1
             // 

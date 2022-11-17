@@ -46,6 +46,7 @@ namespace Chaki_System
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button1
@@ -89,7 +90,7 @@ namespace Chaki_System
             // 
             this.textBox2.Location = new System.Drawing.Point(317, 49);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(449, 27);
+            this.textBox2.Size = new System.Drawing.Size(125, 27);
             this.textBox2.TabIndex = 4;
             // 
             // label2
@@ -194,11 +195,21 @@ namespace Chaki_System
             this.textBox5.Size = new System.Drawing.Size(125, 27);
             this.textBox5.TabIndex = 19;
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(32, 353);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(170, 20);
+            this.label11.TabIndex = 20;
+            this.label11.Text = "４文字以上にしてください。";
+            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label11);
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
@@ -242,5 +253,6 @@ namespace Chaki_System
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.Label label11;
     }
 }
