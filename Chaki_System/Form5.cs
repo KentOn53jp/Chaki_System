@@ -22,27 +22,41 @@ namespace Chaki_System
             Form6 f6 = new Form6();
             f6.Show();
 
-            using (SQLiteConnection con = new SQLiteConnection("Data Source=HCS.db"))
+            if (textBox1.Text == "管理者")
             {
-                con.Open();
-                SQLiteCommand cmd = con.CreateCommand();
+                using (SQLiteConnection con = new SQLiteConnection("Data Source=HCS.db"))
+                {
+                    var dataTable = new DataTable();
+                    var adapter = new SQLiteDataAdapter("SELECT * FROM t_product", con);
+                    adapter.Fill(dataTable);
+                    f6.dataGridView1.DataSource = dataTable;
+                }
+            }
 
-                // DataTableを生成します。
-                var dataTable = new DataTable();
+            else
+            {
+                using (SQLiteConnection con = new SQLiteConnection("Data Source=HCS.db"))
+                {
+                    con.Open();
+                    SQLiteCommand cmd = con.CreateCommand();
 
-                // SQLの実行
-                cmd.CommandText = "SELECT * FROM t_product WHERE Pass = @Pass";
-                //パラメータの型を設定
-                cmd.Parameters.Add("Pass", System.Data.DbType.String);
-                //textbox1
-                cmd.Parameters["Pass"].Value = textBox1.Text;
+                    // DataTableを生成します。
+                    var dataTable = new DataTable();
 
-                dataTable.Clear();
-                dataTable.Load(cmd.ExecuteReader());
+                    // SQLの実行
+                    cmd.CommandText = "SELECT * FROM t_product WHERE Pass = @Pass";
+                    //パラメータの型を設定
+                    cmd.Parameters.Add("Pass", System.Data.DbType.String);
+                    //textbox1
+                    cmd.Parameters["Pass"].Value = textBox1.Text;
 
-                f6.dataGridView1.DataSource = dataTable;
+                    dataTable.Clear();
+                    dataTable.Load(cmd.ExecuteReader());
 
-                con.Close();
+                    f6.dataGridView1.DataSource = dataTable;
+
+                    con.Close();
+                }
             }
         }
 

@@ -67,7 +67,7 @@ namespace Chaki_System
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(357, 85);
+            this.label1.Location = new System.Drawing.Point(367, 86);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(39, 20);
             this.label1.TabIndex = 4;

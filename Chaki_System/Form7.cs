@@ -18,9 +18,9 @@ namespace Chaki_System
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Visible = false;
+            //this.Visible = false;
             Form8 f8 = new Form8();
-            f8.Show();
+            //f8.Show();
             f8.textBox5.Text = textBox1.Text;
 
             using (SQLiteConnection con = new SQLiteConnection("Data Source=HCS.db"))
@@ -32,7 +32,8 @@ namespace Chaki_System
                 var dataTable = new DataTable();
 
                 // SQLの実行
-                cmd.CommandText = "SELECT * FROM t_product WHERE CD = @CD AND Pass = @Pass";
+                cmd.CommandText = "SELECT * FROM t_product WHERE  CD = @CD AND Pass = @Pass";
+                //cmd.CommandText = "SELECT * FROM t_product WHERE EXISTS (SELECT Pass FROM t_product WHERE CD = @CD AND Pass = @Pass)";
                 //パラメータの型を設定
                 cmd.Parameters.Add("CD", System.Data.DbType.String);
                 cmd.Parameters.Add("Pass", System.Data.DbType.String);
@@ -43,7 +44,18 @@ namespace Chaki_System
                 dataTable.Clear();
                 dataTable.Load(cmd.ExecuteReader());
 
-                f8.dataGridView1.DataSource = dataTable;
+                if (dataTable.Rows.Count == 0)
+                {
+                    MessageBox.Show("パスワードが違います。", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    f8.dataGridView1.DataSource = dataTable;
+                    this.Visible = false;
+                    f8.Show();
+                }
+
+                //f8.dataGridView1.DataSource = dataTable;
 
                 con.Close();
             }
