@@ -65,7 +65,17 @@ namespace Chaki_System
 
         private void Form2_Load(object sender, EventArgs e)
         {
-
+            using (SQLiteConnection con = new SQLiteConnection("Data Source=HCS.db"))
+            {
+                con.Open();
+                using (SQLiteTransaction trans = con.BeginTransaction())
+                {
+                    SQLiteCommand cmd = con.CreateCommand();
+                    cmd.CommandText = "SELECT CD FROM t_product";
+                    // DataTableを生成します。
+                    var dataTable = new DataTable();
+                }
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -76,6 +86,16 @@ namespace Chaki_System
             //Form5に遷移する
             Form7 f7 = new Form7();
             f7.Show();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            //この画面を非表示にする
+            this.Visible = false;
+
+            //Form5に遷移する
+            Form9 f9 = new Form9();
+            f9.Show();
         }
     }
 }

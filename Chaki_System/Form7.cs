@@ -55,8 +55,6 @@ namespace Chaki_System
                     f8.Show();
                 }
 
-                //f8.dataGridView1.DataSource = dataTable;
-
                 con.Close();
             }
         }

@@ -88,9 +88,9 @@ namespace Chaki_System
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(317, 49);
+            this.textBox2.Location = new System.Drawing.Point(288, 49);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(125, 27);
+            this.textBox2.Size = new System.Drawing.Size(236, 27);
             this.textBox2.TabIndex = 4;
             // 
             // label2
@@ -148,18 +148,18 @@ namespace Chaki_System
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(278, 79);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(488, 20);
+            this.label6.Size = new System.Drawing.Size(291, 20);
             this.label6.TabIndex = 14;
-            this.label6.Text = "例：北海道 札幌市 白石区 菊水６条３丁目 北海道情報専門学校 501教室";
+            this.label6.Text = "例：北海道 札幌市 白石区 菊水６条３丁目";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(288, 99);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(459, 20);
+            this.label7.Size = new System.Drawing.Size(0, 20);
             this.label7.TabIndex = 15;
-            this.label7.Text = "※アパート等にお住まいの方はアパート名、部屋番号もご登録をお願いします。";
             // 
             // label8
             // 
