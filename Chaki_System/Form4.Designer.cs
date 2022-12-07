@@ -1,5 +1,5 @@
 ﻿
-namespace Chaki_System
+namespace ChakiSystem
 {
     partial class Form4
     {
@@ -41,6 +41,7 @@ namespace Chaki_System
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button1
@@ -143,11 +144,22 @@ namespace Chaki_System
             this.textBox5.Size = new System.Drawing.Size(125, 27);
             this.textBox5.TabIndex = 12;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(478, 268);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(30, 20);
+            this.label6.TabIndex = 13;
+            this.label6.Text = "👀";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
+            // 
             // Form4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.textBox4);
@@ -181,5 +193,6 @@ namespace Chaki_System
         public System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label5;
         public System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.Label label6;
     }
 }

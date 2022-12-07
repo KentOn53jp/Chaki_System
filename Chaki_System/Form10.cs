@@ -7,7 +7,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Data.SQLite;
 
-namespace Chaki_System
+namespace ChakiSystem
 {
     public partial class Form10 : Form
     {
@@ -18,7 +18,7 @@ namespace Chaki_System
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form2 f2 = new Form2();
+            MainMenu f2 = new MainMenu();
             Form9 f9 = new Form9();
             DialogResult result = MessageBox.Show("本当に削除しますか？", "削除", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if(result == System.Windows.Forms.DialogResult.Yes)

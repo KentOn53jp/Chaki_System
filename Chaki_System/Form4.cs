@@ -7,10 +7,11 @@ using System.Text;
 using System.Windows.Forms;
 using System.Data.SQLite;
 
-namespace Chaki_System
+namespace ChakiSystem
 {
     public partial class Form4 : Form
     {
+        private bool isOpen = false;
         public Form4()
         {
             InitializeComponent();
@@ -38,6 +39,7 @@ namespace Chaki_System
             textBox3.ReadOnly = true;
             textBox4.ReadOnly = true;
             textBox5.ReadOnly = true;
+            textBox5.PasswordChar = '*';
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -70,8 +72,22 @@ namespace Chaki_System
 
             MessageBox.Show("登録しました", "登録");
             this.Visible = false;
-            Form2 f2 = new Form2();
-            f2.Show();
+            LoginMenu f1 = new LoginMenu();
+            f1.Show();
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+            if (isOpen == false)
+            {
+                textBox5.PasswordChar = default;
+                isOpen = true;
+            }
+            else if (isOpen == true)
+            {
+                textBox5.PasswordChar = '*';
+                isOpen = false;
+            }
         }
     }
 }

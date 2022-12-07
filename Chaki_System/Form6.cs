@@ -7,7 +7,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Data.SQLite;
 
-namespace Chaki_System
+namespace ChakiSystem
 {
     public partial class Form6 : Form
     {
@@ -24,7 +24,7 @@ namespace Chaki_System
         private void button1_Click(object sender, EventArgs e)
         {
             this.Visible = false;
-            Form2 f2 = new Form2();
+            MainMenu f2 = new MainMenu();
             f2.Show();
         }
     }

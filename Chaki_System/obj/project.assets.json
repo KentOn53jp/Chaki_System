@@ -1163,9 +1163,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\s20217064\\Desktop\\Chaki_System\\Chaki_System\\Chaki_System.csproj",
-      "projectName": "Chaki_System",
-      "projectPath": "C:\\Users\\s20217064\\Desktop\\Chaki_System\\Chaki_System\\Chaki_System.csproj",
+      "projectUniqueName": "C:\\Users\\s20217064\\Desktop\\Chaki_System\\Chaki_System\\ChakiSystem.csproj",
+      "projectName": "ChakiSystem",
+      "projectPath": "C:\\Users\\s20217064\\Desktop\\Chaki_System\\Chaki_System\\ChakiSystem.csproj",
       "packagesPath": "C:\\Users\\s20217064\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\s20217064\\Desktop\\Chaki_System\\Chaki_System\\obj\\",
       "projectStyle": "PackageReference",

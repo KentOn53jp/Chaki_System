@@ -7,10 +7,11 @@ using System.Text;
 using System.Windows.Forms;
 using System.Data.SQLite;
 
-namespace Chaki_System
+namespace ChakiSystem
 {
     public partial class Form3 : Form
     {
+        private bool isOpen = false;
         public Form3()
         {
             InitializeComponent();
@@ -22,13 +23,8 @@ namespace Chaki_System
             this.Visible = false;
 
             //Form1に遷移する
-            Form2 f2 = new Form2();
-            f2.Show();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
+            LoginMenu f1 = new LoginMenu();
+            f1.Show();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -37,6 +33,15 @@ namespace Chaki_System
             if(textBox5.TextLength < Max)
             {
                 MessageBox.Show("４文字以上入力してください。","エラー", MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
+            if(textBox5.Text != textBox6.Text)
+            {
+                MessageBox.Show("パスワードが間違っています。", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            if(string.IsNullOrEmpty(textBox1.Text) || string.IsNullOrEmpty(textBox2.Text) || string.IsNullOrEmpty(textBox3.Text)
+                        || string.IsNullOrEmpty(textBox4.Text) || string.IsNullOrEmpty(textBox6.Text))
+            {
+                MessageBox.Show("入力されていない項目があります。", "未入力", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
@@ -55,14 +60,24 @@ namespace Chaki_System
             }
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void label13_Click(object sender, EventArgs e)
         {
-
+            if (isOpen == false)
+            {
+                textBox5.PasswordChar = default;
+                isOpen = true;
+            }
+            else if (isOpen == true)
+            {
+                textBox5.PasswordChar = '*';
+                isOpen = false;
+            }
         }
 
-        private void label6_Click(object sender, EventArgs e)
+        private void Form3_Load(object sender, EventArgs e)
         {
-
+            textBox5.PasswordChar = '*';
+            textBox6.PasswordChar = '*';
         }
     }
 }

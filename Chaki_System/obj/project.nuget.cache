@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "gYxPa2hE5P1cCofzkIq5C1k915275nK7XfkZLnPRVQeR0xmZu0E0e4Oj8BhGgxFs8wOKaJ5tLuhajhmx1dbLbQ==",
+  "dgSpecHash": "uwW9xm1hcbXFLdw9pJO4jKrJapFplLkcmxEaYN7L4CvmTSphnDodrVqTAASJNZI8v8k2VbfmgPYw+7Og2d2ueA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\s20217064\\Desktop\\Chaki_System\\Chaki_System\\Chaki_System.csproj",
+  "projectFilePath": "C:\\Users\\s20217064\\Desktop\\Chaki_System\\Chaki_System\\ChakiSystem.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\s20217064\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",
     "C:\\Users\\s20217064\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

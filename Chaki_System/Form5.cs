@@ -7,7 +7,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Data.SQLite;
 
-namespace Chaki_System
+namespace ChakiSystem
 {
     public partial class Form5 : Form
     {
@@ -56,6 +56,9 @@ namespace Chaki_System
                     f6.dataGridView1.DataSource = dataTable;
 
                     con.Close();
+
+                    this.Visible = false;
+                    f6.Show();
                 }
             }
         }
@@ -63,7 +66,7 @@ namespace Chaki_System
         private void button2_Click(object sender, EventArgs e)
         {
             this.Visible = false;
-            Form2 f2 = new Form2();
+            MainMenu f2 = new MainMenu();
             f2.Show();
         }
 
@@ -71,6 +74,24 @@ namespace Chaki_System
         {
 
         }
+        private bool isOpen = false;
+        private void label2_Click(object sender, EventArgs e)
+        {
+            if (isOpen == false)
+            {
+                textBox1.PasswordChar = default;
+                isOpen = true;
+            }
+            else if (isOpen == true)
+            {
+                textBox1.PasswordChar = '*';
+                isOpen = false;
+            }
+        }
 
+        private void Form5_Load(object sender, EventArgs e)
+        {
+            textBox1.PasswordChar = '*';
+        }
     }
 }

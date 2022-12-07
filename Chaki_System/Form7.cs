@@ -7,7 +7,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Data.SQLite;
 
-namespace Chaki_System
+namespace ChakiSystem
 {
     public partial class Form7 : Form
     {
@@ -18,9 +18,7 @@ namespace Chaki_System
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //this.Visible = false;
             Form8 f8 = new Form8();
-            //f8.Show();
             f8.textBox5.Text = textBox1.Text;
 
             using (SQLiteConnection con = new SQLiteConnection("Data Source=HCS.db"))
@@ -28,13 +26,10 @@ namespace Chaki_System
                 con.Open();
                 SQLiteCommand cmd = con.CreateCommand();
 
-                // DataTableを生成します。
                 var dataTable = new DataTable();
 
-                // SQLの実行
                 cmd.CommandText = "SELECT * FROM t_product WHERE  CD = @CD AND Pass = @Pass";
-                //cmd.CommandText = "SELECT * FROM t_product WHERE EXISTS (SELECT Pass FROM t_product WHERE CD = @CD AND Pass = @Pass)";
-                //パラメータの型を設定
+
                 cmd.Parameters.Add("CD", System.Data.DbType.String);
                 cmd.Parameters.Add("Pass", System.Data.DbType.String);
 
@@ -62,13 +57,32 @@ namespace Chaki_System
         private void button2_Click(object sender, EventArgs e)
         {
             this.Visible = false;
-            Form2 f2 = new Form2();
+            MainMenu f2 = new MainMenu();
             f2.Show();
         }
 
         private void textBox3_TextChanged(object sender, EventArgs e)
         {
 
+        }
+        private bool isOpen = false;
+        private void label3_Click(object sender, EventArgs e)
+        {
+            if (isOpen == false)
+            {
+                textBox3.PasswordChar = default;
+                isOpen = true;
+            }
+            else if (isOpen == true)
+            {
+                textBox3.PasswordChar = '*';
+                isOpen = false;
+            }
+        }
+
+        private void Form7_Load(object sender, EventArgs e)
+        {
+            textBox3.PasswordChar = '*';
         }
     }
 }

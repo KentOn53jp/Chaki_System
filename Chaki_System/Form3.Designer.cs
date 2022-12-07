@@ -1,5 +1,5 @@
 ﻿
-namespace Chaki_System
+namespace ChakiSystem
 {
     partial class Form3
     {
@@ -47,6 +47,9 @@ namespace Chaki_System
             this.label10 = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button1
@@ -84,7 +87,6 @@ namespace Chaki_System
             this.label1.Size = new System.Drawing.Size(39, 20);
             this.label1.TabIndex = 3;
             this.label1.Text = "氏名";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // textBox2
             // 
@@ -151,7 +153,6 @@ namespace Chaki_System
             this.label6.Size = new System.Drawing.Size(291, 20);
             this.label6.TabIndex = 14;
             this.label6.Text = "例：北海道 札幌市 白石区 菊水６条３丁目";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label7
             // 
@@ -204,11 +205,40 @@ namespace Chaki_System
             this.label11.TabIndex = 20;
             this.label11.Text = "４文字以上にしてください。";
             // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(286, 314);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(125, 27);
+            this.textBox6.TabIndex = 21;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(317, 291);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(54, 20);
+            this.label12.TabIndex = 22;
+            this.label12.Text = "再入力";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(194, 315);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(30, 20);
+            this.label13.TabIndex = 23;
+            this.label13.Text = "👀";
+            this.label13.Click += new System.EventHandler(this.label13_Click);
+            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.textBox6);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.label10);
@@ -229,6 +259,7 @@ namespace Chaki_System
             this.Controls.Add(this.button1);
             this.Name = "Form3";
             this.Text = "Form3";
+            this.Load += new System.EventHandler(this.Form3_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -254,5 +285,8 @@ namespace Chaki_System
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
     }
 }
