@@ -23,7 +23,7 @@ namespace ChakiSystem
             this.Visible = false;
 
             //Form1に遷移する
-            Form3 f3 = new Form3();
+            Register f3 = new Register();
             f3.Show();
         }
 

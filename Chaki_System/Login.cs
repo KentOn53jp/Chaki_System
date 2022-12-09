@@ -10,6 +10,8 @@ namespace ChakiSystem
         //パスワードの表示、非表示フラグ
         private bool isOpen = false;
 
+        SQLiteConnection LoginCon = new SQLiteConnection("Data Source = HCS.db");
+
         //textbox1に入力された文字を入れる変数
         public static string Num = "";
         public LoginMenu()
@@ -19,88 +21,114 @@ namespace ChakiSystem
 
         /// <summary>
         /// ログインボタンを押したら
-        /// メインメニューへ飛びます。
+        /// メインメニューへ飛ぶ。
         /// 
-        /// 入力された名前とパスワードを
+        /// 入力された名前とパスワードがあっているか確認する
+        /// 間違っている場合はメインメニューには飛べない。
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void LoginButton_Click(object sender, EventArgs e)
         {
-            MainMenu f2 = new MainMenu();
+            //MainMenu Formを取得
+            MainMenu main = new MainMenu();
 
-            using (SQLiteConnection con = new SQLiteConnection("Data Source=HCS.db"))
+            //DBに接続
+            LoginCon.Open();
+
+            SQLiteCommand cmd = LoginCon.CreateCommand();
+
+            DataTable dataTable = new DataTable();
+
+            //SQL実行 名前とパスワードで検索
+            cmd.CommandText = "SELECT * FROM t_product WHERE  Name = @Name AND Pass = @Pass";
+            //名前とパスワードのパラメータセット
+            cmd.Parameters.Add("Name", DbType.String);
+            cmd.Parameters.Add("Pass", DbType.String);
+
+            cmd.Parameters["Name"].Value = textBox1.Text;
+            cmd.Parameters["Pass"].Value = textBox2.Text;
+
+            dataTable.Clear();
+            dataTable.Load(cmd.ExecuteReader());
+
+            LoginCon.Close();
+
+            //どちらかのテキストボックスが空白の場合、エラーダイアログを表示
+            if (string.IsNullOrEmpty(textBox1.Text) || string.IsNullOrEmpty(textBox2.Text)) 
             {
-                con.Open();
-                SQLiteCommand cmd = con.CreateCommand();
-
-                var dataTable = new DataTable();
-
-                cmd.CommandText = "SELECT * FROM t_product WHERE  Name = @Name AND Pass = @Pass";
-
-                cmd.Parameters.Add("Name", DbType.String);
-                cmd.Parameters.Add("Pass", DbType.String);
-
-                cmd.Parameters["Name"].Value = textBox1.Text;
-                cmd.Parameters["Pass"].Value = textBox2.Text;
-
-                dataTable.Clear();
-                dataTable.Load(cmd.ExecuteReader());
-
-                con.Close();
-
-                if (string.IsNullOrEmpty(textBox1.Text) || string.IsNullOrEmpty(textBox2.Text)) 
-                {
-                    MessageBox.Show("氏名、パスワードを入力してください。", "未入力", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                else if(dataTable.Rows.Count == 0)
-                {
-                    MessageBox.Show("パスワードが違います。", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                else
-                {
-                    Num = textBox1.Text;
-                    this.Visible = false;
-                    f2.Show();
-                }
+                MessageBox.Show("氏名、パスワードを入力してください。", "未入力", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            //検索したデータがなかった場合、エラーダイアログを表示
+            else if(dataTable.Rows.Count == 0)
+            {
+                MessageBox.Show("パスワードが違います。", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            //検索したデータが一致した場合、次の画面に飛ぶ
+            else
+            {
+                Num = textBox1.Text;
+                this.Visible = false;
+                main.Show();
             }
         }
-
+        
+        /// <summary>
+        /// 新規登録画面に飛ぶボタン
+        /// 
+        /// テーブルが存在していないときにテーブルを作る
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void NewNumberButton_Click(object sender, EventArgs e)
         {
-            using (var con = new SQLiteConnection("Data Source=HCS.db"))
+            LoginCon.Open();
+
+            using (SQLiteCommand command = LoginCon.CreateCommand())
             {
-                con.Open();
-                using (SQLiteCommand command = con.CreateCommand())
-                {
-                    command.CommandText =
-                        "create table IF NOT EXISTS t_product(CD INTEGER  PRIMARY KEY AUTOINCREMENT, Name TEXT, Address TEXT, PhoneNumber INTEGER,  Birhtday INTEGER, Pass TEXT)";
-                    command.ExecuteNonQuery();
-                }
-                con.Close();
-
-                //この画面を非表示にする
-                this.Visible = false;
-
-                //Form3に遷移する
-                Form3 f3 = new Form3();
-                f3.Show();
+                command.CommandText =
+                    "create table IF NOT EXISTS t_product(CD INTEGER  PRIMARY KEY AUTOINCREMENT, Name TEXT, Address TEXT, PhoneNumber INTEGER,  Birhtday INTEGER, Pass TEXT)";
+                command.ExecuteNonQuery();
             }
+            LoginCon.Close();
+
+            //この画面を非表示にする
+            this.Visible = false;
+
+            //Form3に遷移する
+            Register f3 = new Register();
+            f3.Show();
         }
 
+        /// <summary>
+        /// LoginMenuをロードしたとき
+        /// 
+        /// パスワードを伏字にする
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void LoginMenu_Load(object sender, EventArgs e)
         {
             textBox2.PasswordChar = '*';
         }
 
-
-        private void label3_Click_2(object sender, EventArgs e)
+        /// <summary>
+        /// 目のアイコンを押すと伏字を解除
+        /// もう一度押すと伏字に戻る
+        /// 
+        /// フラグで管理
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void EyeIcon_Click(object sender, EventArgs e)
         {
+            //isOpenがfalseの場合
             if (isOpen == false)
             {
                 textBox2.PasswordChar = default;
                 isOpen = true;
             }
+            //isopenがtrueの場合
             else if (isOpen == true)
             {
                 textBox2.PasswordChar = '*';

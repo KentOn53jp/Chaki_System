@@ -1,7 +1,7 @@
 ﻿
 namespace ChakiSystem
 {
-    partial class Form3
+    partial class Register
     {
         /// <summary>
         /// Required designer variable.
@@ -29,8 +29,8 @@ namespace ChakiSystem
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.BackButton = new System.Windows.Forms.Button();
+            this.RegisterButton = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -52,25 +52,25 @@ namespace ChakiSystem
             this.label13 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // button1
+            // BackButton
             // 
-            this.button1.Location = new System.Drawing.Point(694, 409);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(94, 29);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "前に戻る ";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.BackButton.Location = new System.Drawing.Point(694, 409);
+            this.BackButton.Name = "BackButton";
+            this.BackButton.Size = new System.Drawing.Size(94, 29);
+            this.BackButton.TabIndex = 0;
+            this.BackButton.Text = "前に戻る ";
+            this.BackButton.UseVisualStyleBackColor = true;
+            this.BackButton.Click += new System.EventHandler(this.BackButton_Click);
             // 
-            // button2
+            // RegisterButton
             // 
-            this.button2.Location = new System.Drawing.Point(288, 396);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(184, 42);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "登録";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.RegisterButton.Location = new System.Drawing.Point(288, 396);
+            this.RegisterButton.Name = "RegisterButton";
+            this.RegisterButton.Size = new System.Drawing.Size(184, 42);
+            this.RegisterButton.TabIndex = 1;
+            this.RegisterButton.Text = "登録";
+            this.RegisterButton.UseVisualStyleBackColor = true;
+            this.RegisterButton.Click += new System.EventHandler(this.RegisterButton_Click);
             // 
             // textBox1
             // 
@@ -231,7 +231,7 @@ namespace ChakiSystem
             this.label13.Text = "👀";
             this.label13.Click += new System.EventHandler(this.label13_Click);
             // 
-            // Form3
+            // Register
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -255,10 +255,10 @@ namespace ChakiSystem
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Name = "Form3";
-            this.Text = "Form3";
+            this.Controls.Add(this.RegisterButton);
+            this.Controls.Add(this.BackButton);
+            this.Name = "Register";
+            this.Text = "登録画面";
             this.Load += new System.EventHandler(this.Form3_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -267,8 +267,8 @@ namespace ChakiSystem
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button BackButton;
+        private System.Windows.Forms.Button RegisterButton;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox2;

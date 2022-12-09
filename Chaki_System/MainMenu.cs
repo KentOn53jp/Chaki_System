@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using System.Windows.Forms;
 using System.Data.SQLite;
 
@@ -6,44 +7,33 @@ namespace ChakiSystem
 {
     public partial class MainMenu : Form
     {
+        SQLiteConnection MainCon = new SQLiteConnection("Data Source=HCS.db");
         public MainMenu()
         {
             InitializeComponent();
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        /// <summary>
+        /// ログイン画面に戻るボタン
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void BackButton_Click(object sender, EventArgs e)
         {
             //この画面を非表示にする
             this.Visible = false;
 
-            //Form1に遷移する
-            LoginMenu f1 = new LoginMenu();
-            f1.Show();
+            //LoginMenuに遷移する
+            LoginMenu log = new LoginMenu();
+            log.Show();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            using (var con = new SQLiteConnection("Data Source=HCS.db"))
-            {
-                con.Open();
-                using (SQLiteCommand command = con.CreateCommand())
-                {
-                    //テーブル作成
-                    command.CommandText =
-                        "create table IF NOT EXISTS t_product(CD INTEGER  PRIMARY KEY AUTOINCREMENT, Name TEXT, Numbers INTEGER, Address TEXT, PhoneNumber INTEGER,  Birhtday INTEGER, Pass TEXT)";
-                    command.ExecuteNonQuery();
-                }
-                con.Close();
-
-                //この画面を非表示にする
-                this.Visible = false;
-
-                //Form3に遷移する
-                Form3 f3 = new Form3();
-                f3.Show();
-            }
-        }
-        private void button2_Click(object sender, EventArgs e)
+        /// <summary>
+        /// 検索画面に遷移するボタン
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void SearchButton_Click(object sender, EventArgs e)
         {
             this.Visible = false;
 
@@ -51,31 +41,49 @@ namespace ChakiSystem
             f5.Show();
         }
 
-        private void Form2_Load(object sender, EventArgs e)
+        /// <summary>
+        /// MainMenu画面をロードしたとき
+        /// 
+        /// 画面右上に番号を表示させる処理
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void MainMenu_Load(object sender, EventArgs e)
         {
-            using (SQLiteConnection con = new SQLiteConnection("Data Source=HCS.db"))
+            //DBに接続
+            MainCon.Open();
+
+            using (SQLiteTransaction trans = MainCon.BeginTransaction())
             {
-                con.Open();
-                using (SQLiteTransaction trans = con.BeginTransaction())
+                //CDにnullを設定
+                string CD = null;
+
+                SQLiteCommand cmd = MainCon.CreateCommand();
+
+                //SQL実行　名前で検索
+                cmd.CommandText = "SELECT CD FROM t_product WHERE  Name = @Name";
+
+                //名前のパラメーターセット
+                cmd.Parameters.Add("Name", DbType.String);
+                cmd.Parameters["Name"].Value = LoginMenu.Num;
+
+                SQLiteDataReader reader = cmd.ExecuteReader();
+
+                //データを読み込み、取得した値を
+                while(reader.Read())
                 {
-                    string CD = null;
-                    SQLiteCommand cmd = con.CreateCommand();
-                    cmd.CommandText = "SELECT CD FROM t_product WHERE  Name = @Name";
-                    cmd.Parameters.Add("Name", System.Data.DbType.String);
-                    cmd.Parameters["Name"].Value = LoginMenu.Num;
-
-                    SQLiteDataReader reader = cmd.ExecuteReader();
-
-                    while(reader.Read())
-                    {
-                        CD = reader.GetValue(0).ToString();
-                        label3.Text = CD;
-                    }
+                    CD = reader.GetValue(0).ToString();
+                    NumberLable.Text = CD;
                 }
             }
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        /// <summary>
+        /// 修正画面に遷移するボタン
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void EditButton_Click(object sender, EventArgs e)
         {
             this.Visible = false;
 
@@ -83,7 +91,12 @@ namespace ChakiSystem
             f7.Show();
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        /// <summary>
+        /// 削除画面に遷移するボタン
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void DeleteButton_Click(object sender, EventArgs e)
         {
             this.Visible = false;
 

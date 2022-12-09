@@ -1,33 +1,32 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
-using System.Data.SQLite;
 
 namespace ChakiSystem
 {
-    public partial class Form3 : Form
+    public partial class Register : Form
     {
         private bool isOpen = false;
-        public Form3()
+        public Register()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void BackButton_Click(object sender, EventArgs e)
         {
             //この画面を非表示にする
             this.Visible = false;
 
             //Form1に遷移する
-            LoginMenu f1 = new LoginMenu();
-            f1.Show();
+            LoginMenu log = new LoginMenu();
+            log.Show();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void RegisterButton_Click(object sender, EventArgs e)
         {
             int Max = 3;
             if(textBox5.TextLength < Max)
