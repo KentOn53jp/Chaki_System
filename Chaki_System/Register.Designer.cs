@@ -31,25 +31,25 @@ namespace ChakiSystem
         {
             this.BackButton = new System.Windows.Forms.Button();
             this.RegisterButton = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.NameText = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.AddressText = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.PhoneText = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.BirthText = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.PassText = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.RetryText = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
+            this.EyeLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // BackButton
@@ -72,12 +72,12 @@ namespace ChakiSystem
             this.RegisterButton.UseVisualStyleBackColor = true;
             this.RegisterButton.Click += new System.EventHandler(this.RegisterButton_Click);
             // 
-            // textBox1
+            // NameText
             // 
-            this.textBox1.Location = new System.Drawing.Point(62, 49);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(125, 27);
-            this.textBox1.TabIndex = 2;
+            this.NameText.Location = new System.Drawing.Point(62, 49);
+            this.NameText.Name = "NameText";
+            this.NameText.Size = new System.Drawing.Size(125, 27);
+            this.NameText.TabIndex = 2;
             // 
             // label1
             // 
@@ -88,12 +88,12 @@ namespace ChakiSystem
             this.label1.TabIndex = 3;
             this.label1.Text = "氏名";
             // 
-            // textBox2
+            // AddressText
             // 
-            this.textBox2.Location = new System.Drawing.Point(288, 49);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(236, 27);
-            this.textBox2.TabIndex = 4;
+            this.AddressText.Location = new System.Drawing.Point(288, 49);
+            this.AddressText.Name = "AddressText";
+            this.AddressText.Size = new System.Drawing.Size(236, 27);
+            this.AddressText.TabIndex = 4;
             // 
             // label2
             // 
@@ -113,12 +113,12 @@ namespace ChakiSystem
             this.label3.TabIndex = 7;
             this.label3.Text = "電話番号";
             // 
-            // textBox3
+            // PhoneText
             // 
-            this.textBox3.Location = new System.Drawing.Point(62, 184);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(125, 27);
-            this.textBox3.TabIndex = 8;
+            this.PhoneText.Location = new System.Drawing.Point(62, 184);
+            this.PhoneText.Name = "PhoneText";
+            this.PhoneText.Size = new System.Drawing.Size(125, 27);
+            this.PhoneText.TabIndex = 8;
             // 
             // label4
             // 
@@ -129,12 +129,12 @@ namespace ChakiSystem
             this.label4.TabIndex = 9;
             this.label4.Text = "生年月日";
             // 
-            // textBox4
+            // BirthText
             // 
-            this.textBox4.Location = new System.Drawing.Point(317, 184);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(125, 27);
-            this.textBox4.TabIndex = 10;
+            this.BirthText.Location = new System.Drawing.Point(317, 184);
+            this.BirthText.Name = "BirthText";
+            this.BirthText.Size = new System.Drawing.Size(125, 27);
+            this.BirthText.TabIndex = 10;
             // 
             // label5
             // 
@@ -189,12 +189,12 @@ namespace ChakiSystem
             this.label10.TabIndex = 18;
             this.label10.Text = "パスワード";
             // 
-            // textBox5
+            // PassText
             // 
-            this.textBox5.Location = new System.Drawing.Point(62, 314);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(125, 27);
-            this.textBox5.TabIndex = 19;
+            this.PassText.Location = new System.Drawing.Point(62, 314);
+            this.PassText.Name = "PassText";
+            this.PassText.Size = new System.Drawing.Size(125, 27);
+            this.PassText.TabIndex = 19;
             // 
             // label11
             // 
@@ -205,12 +205,12 @@ namespace ChakiSystem
             this.label11.TabIndex = 20;
             this.label11.Text = "４文字以上にしてください。";
             // 
-            // textBox6
+            // RetryText
             // 
-            this.textBox6.Location = new System.Drawing.Point(286, 314);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(125, 27);
-            this.textBox6.TabIndex = 21;
+            this.RetryText.Location = new System.Drawing.Point(286, 314);
+            this.RetryText.Name = "RetryText";
+            this.RetryText.Size = new System.Drawing.Size(125, 27);
+            this.RetryText.TabIndex = 21;
             // 
             // label12
             // 
@@ -221,45 +221,45 @@ namespace ChakiSystem
             this.label12.TabIndex = 22;
             this.label12.Text = "再入力";
             // 
-            // label13
+            // EyeLabel
             // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(194, 315);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(30, 20);
-            this.label13.TabIndex = 23;
-            this.label13.Text = "👀";
-            this.label13.Click += new System.EventHandler(this.label13_Click);
+            this.EyeLabel.AutoSize = true;
+            this.EyeLabel.Location = new System.Drawing.Point(194, 315);
+            this.EyeLabel.Name = "EyeLabel";
+            this.EyeLabel.Size = new System.Drawing.Size(30, 20);
+            this.EyeLabel.TabIndex = 23;
+            this.EyeLabel.Text = "👀";
+            this.EyeLabel.Click += new System.EventHandler(this.EyeLable_Click);
             // 
             // Register
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label13);
+            this.Controls.Add(this.EyeLabel);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.RetryText);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.PassText);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.BirthText);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.PhoneText);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.AddressText);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.NameText);
             this.Controls.Add(this.RegisterButton);
             this.Controls.Add(this.BackButton);
             this.Name = "Register";
             this.Text = "登録画面";
-            this.Load += new System.EventHandler(this.Form3_Load);
+            this.Load += new System.EventHandler(this.Register_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -269,24 +269,24 @@ namespace ChakiSystem
 
         private System.Windows.Forms.Button BackButton;
         private System.Windows.Forms.Button RegisterButton;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox NameText;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox AddressText;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox PhoneText;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox BirthText;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox PassText;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox RetryText;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label EyeLabel;
     }
 }

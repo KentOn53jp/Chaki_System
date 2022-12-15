@@ -10,16 +10,16 @@
     <Compile Update="Register.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Form4.cs">
+    <Compile Update="RetryRegister.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Form5.cs">
+    <Compile Update="Search.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Form6.cs">
+    <Compile Update="SearchResult.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Form7.cs">
+    <Compile Update="Edit.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Form8.cs">

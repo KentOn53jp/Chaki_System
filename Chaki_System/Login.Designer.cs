@@ -31,8 +31,8 @@ namespace ChakiSystem
         {
             this.LoginButton = new System.Windows.Forms.Button();
             this.NewNumberButton = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.NameText = new System.Windows.Forms.TextBox();
+            this.PassText = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.EyeIcon = new System.Windows.Forms.Label();
@@ -58,19 +58,19 @@ namespace ChakiSystem
             this.NewNumberButton.UseVisualStyleBackColor = true;
             this.NewNumberButton.Click += new System.EventHandler(this.NewNumberButton_Click);
             // 
-            // textBox1
+            // NameText
             // 
-            this.textBox1.Location = new System.Drawing.Point(335, 98);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(125, 27);
-            this.textBox1.TabIndex = 3;
+            this.NameText.Location = new System.Drawing.Point(335, 98);
+            this.NameText.Name = "NameText";
+            this.NameText.Size = new System.Drawing.Size(125, 27);
+            this.NameText.TabIndex = 3;
             // 
-            // textBox2
+            // PassText
             // 
-            this.textBox2.Location = new System.Drawing.Point(335, 178);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(125, 27);
-            this.textBox2.TabIndex = 4;
+            this.PassText.Location = new System.Drawing.Point(335, 178);
+            this.PassText.Name = "PassText";
+            this.PassText.Size = new System.Drawing.Size(125, 27);
+            this.PassText.TabIndex = 4;
             // 
             // label1
             // 
@@ -108,8 +108,8 @@ namespace ChakiSystem
             this.Controls.Add(this.EyeIcon);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.PassText);
+            this.Controls.Add(this.NameText);
             this.Controls.Add(this.NewNumberButton);
             this.Controls.Add(this.LoginButton);
             this.Name = "LoginMenu";
@@ -125,8 +125,8 @@ namespace ChakiSystem
         private System.Windows.Forms.Button NewNumberButton;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        public System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        public System.Windows.Forms.TextBox NameText;
+        private System.Windows.Forms.TextBox PassText;
         private System.Windows.Forms.Label EyeIcon;
     }
 }

@@ -12,7 +12,7 @@ namespace ChakiSystem
 
         SQLiteConnection LoginCon = new SQLiteConnection("Data Source = HCS.db");
 
-        //textbox1に入力された文字を入れる変数
+        //NameTextに入力された文字を入れる変数
         public static string Num = "";
         public LoginMenu()
         {
@@ -46,8 +46,8 @@ namespace ChakiSystem
             cmd.Parameters.Add("Name", DbType.String);
             cmd.Parameters.Add("Pass", DbType.String);
 
-            cmd.Parameters["Name"].Value = textBox1.Text;
-            cmd.Parameters["Pass"].Value = textBox2.Text;
+            cmd.Parameters["Name"].Value = NameText.Text;
+            cmd.Parameters["Pass"].Value = PassText.Text;
 
             dataTable.Clear();
             dataTable.Load(cmd.ExecuteReader());
@@ -55,7 +55,7 @@ namespace ChakiSystem
             LoginCon.Close();
 
             //どちらかのテキストボックスが空白の場合、エラーダイアログを表示
-            if (string.IsNullOrEmpty(textBox1.Text) || string.IsNullOrEmpty(textBox2.Text)) 
+            if (string.IsNullOrEmpty(NameText.Text) || string.IsNullOrEmpty(PassText.Text)) 
             {
                 MessageBox.Show("氏名、パスワードを入力してください。", "未入力", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -67,7 +67,7 @@ namespace ChakiSystem
             //検索したデータが一致した場合、次の画面に飛ぶ
             else
             {
-                Num = textBox1.Text;
+                Num = NameText.Text;
                 this.Visible = false;
                 main.Show();
             }
@@ -109,7 +109,7 @@ namespace ChakiSystem
         /// <param name="e"></param>
         private void LoginMenu_Load(object sender, EventArgs e)
         {
-            textBox2.PasswordChar = '*';
+            PassText.PasswordChar = '*';
         }
 
         /// <summary>
@@ -125,13 +125,13 @@ namespace ChakiSystem
             //isOpenがfalseの場合
             if (isOpen == false)
             {
-                textBox2.PasswordChar = default;
+                PassText.PasswordChar = default;
                 isOpen = true;
             }
             //isopenがtrueの場合
             else if (isOpen == true)
             {
-                textBox2.PasswordChar = '*';
+                PassText.PasswordChar = '*';
                 isOpen = false;
             }
         }

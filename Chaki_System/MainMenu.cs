@@ -37,7 +37,7 @@ namespace ChakiSystem
         {
             this.Visible = false;
 
-            Form5 f5 = new Form5();
+            Search f5 = new Search();
             f5.Show();
         }
 
@@ -87,7 +87,7 @@ namespace ChakiSystem
         {
             this.Visible = false;
 
-            Form7 f7 = new Form7();
+            Edit f7 = new Edit();
             f7.Show();
         }
 
