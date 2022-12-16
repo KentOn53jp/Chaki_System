@@ -5,68 +5,19 @@ using System.Data.SQLite;
 
 namespace ChakiSystem
 {
-    public partial class Edit : Form
+    public partial class Delete : Form
     {
-        SQLiteConnection EditCon = new SQLiteConnection("Data Source=HCS.db");
-
         private bool isOpen = false;
 
-        public Edit()
+        SQLiteConnection DeleteCon = new SQLiteConnection("Data Source=HCS.db");
+
+        public Delete()
         {
             InitializeComponent();
         }
 
         /// <summary>
-        /// 番号とパスワードが合っている場合に次の画面に遷移
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void NextButton_Click(object sender, EventArgs e)
-        {
-
-            EditResult editRes = new EditResult();
-
-            editRes.CDText.Text = NumberText.Text;
-
-            //データベース接続
-            EditCon.Open();
-
-            SQLiteCommand cmd = EditCon.CreateCommand();
-
-            DataTable dataTable = new DataTable();
-
-            //SQL実行　番号とパスワードで検索
-            cmd.CommandText = "SELECT * FROM t_product WHERE  CD = @CD AND Pass = @Pass";
-
-            //番号とパスワードのパラメータ定義
-            cmd.Parameters.Add("CD", DbType.String);
-            cmd.Parameters.Add("Pass", DbType.String);
-
-            //番号とパスワードのパラメータ
-            cmd.Parameters["CD"].Value = NumberText.Text;
-            cmd.Parameters["Pass"].Value = PassText.Text;
-
-            dataTable.Clear();
-            dataTable.Load(cmd.ExecuteReader());
-
-            //検索した結果、何もなかった場合エラーメッセージ
-            if (dataTable.Rows.Count == 0)
-            {
-                MessageBox.Show("パスワードが違います。", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else
-            {
-                editRes.EditDataView.DataSource = dataTable;
-                this.Visible = false;
-                editRes.Show();
-            }
-
-            EditCon.Close();
-            
-        }
-
-        /// <summary>
-        /// ボタンを押したらメインメニューに戻る
+        /// メインメニューに戻るボタン
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -78,8 +29,56 @@ namespace ChakiSystem
         }
 
         /// <summary>
-        /// 目のラベルを押すと伏字解除
-        /// もう一度押すと伏字
+        /// ボタンを押すと次の画面に進む。
+        /// 
+        /// 検索結果がなかった場合にエラー
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void NextButton_Click(object sender, EventArgs e)
+        {
+            DeleteResult f10 = new DeleteResult();
+            f10.NumberText.Text = NumberText.Text;
+
+            DeleteCon.Open();
+            SQLiteCommand cmd = DeleteCon.CreateCommand();
+
+            // DataTableを生成します。
+            var dataTable = new DataTable();
+
+            // SQLの実行 CDとパスワードで検索
+            cmd.CommandText = "SELECT * FROM t_product WHERE  CD = @CD AND Pass = @Pass";
+
+            // CD・パスワードのパラメータ定義
+            cmd.Parameters.Add("CD", DbType.String);
+            cmd.Parameters.Add("Pass", DbType.String);
+
+            // CD・パスワードのパラメータ
+            cmd.Parameters["CD"].Value = NumberText.Text;
+            cmd.Parameters["Pass"].Value = PassText.Text;
+
+            dataTable.Clear();
+
+            dataTable.Load(cmd.ExecuteReader());
+
+            // 検索した結果がなかった場合エラーメッセージ
+            if (dataTable.Rows.Count == 0)
+            {
+                MessageBox.Show("パスワードが違います。", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                f10.DeletDataView.DataSource = dataTable;
+                this.Visible = false;
+                f10.Show();
+            }
+
+            DeleteCon.Close();
+        }
+
+        /// <summary>
+        /// 目のラベルを押すと伏字を解除
+        /// もう一度押すと伏字になる
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -98,11 +97,11 @@ namespace ChakiSystem
         }
 
         /// <summary>
-        /// この画面に遷移してきたときパスワードを伏字にする。
+        /// パスワードの初期状態を伏字にする
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void Edit_Load(object sender, EventArgs e)
+        private void Delete_Load(object sender, EventArgs e)
         {
             PassText.PasswordChar = '*';
         }

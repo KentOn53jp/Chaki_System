@@ -42,10 +42,10 @@ namespace ChakiSystem
 
             //SQL実行 名前とパスワードで検索
             cmd.CommandText = "SELECT * FROM t_product WHERE  Name = @Name AND Pass = @Pass";
-            //名前とパスワードのパラメータセット
+            //名前とパスワードのパラメータ定義
             cmd.Parameters.Add("Name", DbType.String);
             cmd.Parameters.Add("Pass", DbType.String);
-
+            //名前・パスワードのパラメータ
             cmd.Parameters["Name"].Value = NameText.Text;
             cmd.Parameters["Pass"].Value = PassText.Text;
 
@@ -77,6 +77,7 @@ namespace ChakiSystem
         /// 新規登録画面に飛ぶボタン
         /// 
         /// テーブルが存在していないときにテーブルを作る
+        /// 名前・住所・電話番号・生年月日・パスワードの項目を作成
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>

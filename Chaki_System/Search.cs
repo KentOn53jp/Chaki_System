@@ -27,12 +27,17 @@ namespace ChakiSystem
 
             if (PassText.Text == "管理者")
             {
-                var dataTable = new DataTable();
-                var adapter = new SQLiteDataAdapter("SELECT * FROM t_product", SearchCon);
+                DataTable dataTable = new DataTable();
+
+                SQLiteDataAdapter adapter = new SQLiteDataAdapter("SELECT * FROM t_product", SearchCon);
+
                 adapter.Fill(dataTable);
+
                 this.Visible = false;
-                SearchResult f6 = new SearchResult();
-                f6.SearchData.DataSource = dataTable;
+
+                SearchResult searRes = new SearchResult();
+
+                searRes.SearchData.DataSource = dataTable;
             }
 
             else
@@ -57,22 +62,24 @@ namespace ChakiSystem
 
                     // SQLの実行　パスワードで検索
                     cmd.CommandText = "SELECT * FROM t_product WHERE Pass = @Pass";
-                    //パラメータセット
-                    cmd.Parameters.Add("Pass", System.Data.DbType.String);
 
+                    //パスワードのパラメータ定義
+                    cmd.Parameters.Add("Pass", DbType.String);
+
+                    //パスワードのパラメータ
                     cmd.Parameters["Pass"].Value = PassText.Text;
 
                     dataTable.Clear();
                     dataTable.Load(cmd.ExecuteReader());
 
-                    SearchResult f6 = new SearchResult();
+                    SearchResult searRes = new SearchResult();
 
-                    f6.SearchData.DataSource = dataTable;
+                    searRes.SearchData.DataSource = dataTable;
 
                     SearchCon.Close();
 
                     this.Visible = false;
-                    f6.Show();
+                    searRes.Show();
                 }
             }
         }

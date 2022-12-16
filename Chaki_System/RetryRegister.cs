@@ -63,27 +63,34 @@ namespace ChakiSystem
                 SQLiteCommand cmd = RetryCon.CreateCommand();
                 // インサート　名前・住所・電話番号・生年月日・パスワードを追加する
                 cmd.CommandText = "INSERT INTO t_product (Name, Address, PhoneNumber, birhtday, Pass) VALUES (@Name, @Address, @PhoneNumber, @Birhtday, @Pass)";
-                // パラメータセット
+
+                // 名前・住所・電話番号・生年月日・パスワードのパラメータ定義
                 cmd.Parameters.Add("Name", DbType.String);
                 cmd.Parameters.Add("Address", DbType.String);
                 cmd.Parameters.Add("PhoneNumber", DbType.String);
                 cmd.Parameters.Add("Birhtday", DbType.String);
                 cmd.Parameters.Add("Pass", DbType.String);
-                // データ追加
+
+                // 名前・住所・電話番号・生年月日・パスワードのパラメータ
                 cmd.Parameters["Name"].Value = NameText.Text;
                 cmd.Parameters["Address"].Value = AddressText.Text;
                 cmd.Parameters["PhoneNumber"].Value = Phonetext.Text;
                 cmd.Parameters["Birhtday"].Value = BirthText.Text;
                 cmd.Parameters["Pass"].Value = PassText.Text;
+
                 cmd.ExecuteNonQuery();
+
                 // コミット
                 trans.Commit();
             }
 
             //登録する際の確認ダイアログ
             MessageBox.Show("登録しました", "登録");
+
             this.Visible = false;
+
             LoginMenu log = new LoginMenu();
+
             //ログイン画面に遷移
             log.Show();
         }

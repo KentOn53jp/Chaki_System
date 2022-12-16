@@ -37,8 +37,8 @@ namespace ChakiSystem
         {
             this.Visible = false;
 
-            Search f5 = new Search();
-            f5.Show();
+            Search sear = new Search();
+            sear.Show();
         }
 
         /// <summary>
@@ -63,13 +63,14 @@ namespace ChakiSystem
                 //SQL実行　名前で検索
                 cmd.CommandText = "SELECT CD FROM t_product WHERE  Name = @Name";
 
-                //名前のパラメーターセット
+                //名前のパラメータ定義
                 cmd.Parameters.Add("Name", DbType.String);
+                //名前パラメータ
                 cmd.Parameters["Name"].Value = LoginMenu.Num;
 
                 SQLiteDataReader reader = cmd.ExecuteReader();
 
-                //データを読み込み、取得した値を
+                //データを読み込み、取得した値をCDに設定
                 while(reader.Read())
                 {
                     CD = reader.GetValue(0).ToString();
@@ -87,8 +88,8 @@ namespace ChakiSystem
         {
             this.Visible = false;
 
-            Edit f7 = new Edit();
-            f7.Show();
+            Edit edit = new Edit();
+            edit.Show();
         }
 
         /// <summary>
@@ -100,8 +101,8 @@ namespace ChakiSystem
         {
             this.Visible = false;
 
-            Form9 f9 = new Form9();
-            f9.Show();
+            Delete del = new Delete();
+            del.Show();
         }
     }
 }
