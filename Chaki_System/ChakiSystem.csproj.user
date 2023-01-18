@@ -4,6 +4,9 @@
     <Compile Update="DeleteResult.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Appo.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="MainMenu.cs">
       <SubType>Form</SubType>
     </Compile>

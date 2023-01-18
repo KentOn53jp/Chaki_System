@@ -33,7 +33,9 @@ namespace ChakiSystem
             using (SQLiteTransaction trans = EditCon.BeginTransaction())
             {
                 SQLiteCommand cmd = EditCon.CreateCommand();
+
                 DataTable dataTable = new DataTable();
+
                 MainMenu main = new MainMenu();
 
                 //すべてのテキストボックスのうち、一つでも空欄のテキストボックスがあれば、エラーメッセージを表示する。
@@ -43,15 +45,14 @@ namespace ChakiSystem
                     MessageBox.Show("入力されていない項目があります。", "未入力", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 //結果が何もなかった場合にエラーメッセージを表示
-                else if (dataTable.Rows.Count == 0)
+                else if (PassText.Text != PassResultText.Text)
                 {
                     MessageBox.Show("パスワードが違います。", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
                     MessageBox.Show("変更を保存しました", "保存");
-                    this.Visible = false;
-                    main.Show();
+
                     // SQL実行　CDで検索
                     cmd.CommandText = "UPDATE t_product set Name = @Name, Address = @Address, PhoneNumber = @PhoneNumber, Birhtday = @Birhtday, Pass = @Pass WHERE CD = @CD";
 
@@ -75,8 +76,12 @@ namespace ChakiSystem
 
                     // コミット
                     trans.Commit();
+
+                    this.Visible = false;
+                    main.Show();
                 }
             }
+            EditCon.Close();
         }
 
         /// <summary>
@@ -101,6 +106,7 @@ namespace ChakiSystem
         {
             CDText.ReadOnly = true;
             PassText.PasswordChar = '*';
+            PassResultText.PasswordChar = '*';
         }
 
         /// <summary>

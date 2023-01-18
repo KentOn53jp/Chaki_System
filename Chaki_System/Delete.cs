@@ -37,8 +37,8 @@ namespace ChakiSystem
         /// <param name="e"></param>
         private void NextButton_Click(object sender, EventArgs e)
         {
-            DeleteResult f10 = new DeleteResult();
-            f10.NumberText.Text = NumberText.Text;
+            DeleteResult deleteResu = new DeleteResult();
+            deleteResu.NumberText.Text = NumberText.Text;
 
             DeleteCon.Open();
             SQLiteCommand cmd = DeleteCon.CreateCommand();
@@ -68,9 +68,9 @@ namespace ChakiSystem
             }
             else
             {
-                f10.DeletDataView.DataSource = dataTable;
+                deleteResu.DeletDataView.DataSource = dataTable;
                 this.Visible = false;
-                f10.Show();
+                deleteResu.Show();
             }
 
             DeleteCon.Close();

@@ -36,11 +36,12 @@ namespace ChakiSystem
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.NumberLable = new System.Windows.Forms.Label();
+            this.AppoButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // searchButton
             // 
-            this.searchButton.Location = new System.Drawing.Point(346, 89);
+            this.searchButton.Location = new System.Drawing.Point(533, 92);
             this.searchButton.Name = "searchButton";
             this.searchButton.Size = new System.Drawing.Size(145, 83);
             this.searchButton.TabIndex = 1;
@@ -104,11 +105,22 @@ namespace ChakiSystem
             this.NumberLable.TabIndex = 7;
             this.NumberLable.Text = "a";
             // 
+            // AppoButton
+            // 
+            this.AppoButton.Location = new System.Drawing.Point(149, 92);
+            this.AppoButton.Name = "AppoButton";
+            this.AppoButton.Size = new System.Drawing.Size(153, 83);
+            this.AppoButton.TabIndex = 8;
+            this.AppoButton.Text = "予約";
+            this.AppoButton.UseVisualStyleBackColor = true;
+            this.AppoButton.Click += new System.EventHandler(this.Appo_Click);
+            // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(801, 450);
+            this.Controls.Add(this.AppoButton);
             this.Controls.Add(this.NumberLable);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -132,5 +144,6 @@ namespace ChakiSystem
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label NumberLable;
+        private System.Windows.Forms.Button AppoButton;
     }
 }

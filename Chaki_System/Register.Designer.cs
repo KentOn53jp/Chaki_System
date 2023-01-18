@@ -123,7 +123,7 @@ namespace ChakiSystem
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(342, 157);
+            this.label4.Location = new System.Drawing.Point(317, 157);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(69, 20);
             this.label4.TabIndex = 9;
@@ -131,7 +131,7 @@ namespace ChakiSystem
             // 
             // BirthText
             // 
-            this.BirthText.Location = new System.Drawing.Point(317, 184);
+            this.BirthText.Location = new System.Drawing.Point(288, 184);
             this.BirthText.Name = "BirthText";
             this.BirthText.Size = new System.Drawing.Size(125, 27);
             this.BirthText.TabIndex = 10;
@@ -174,7 +174,7 @@ namespace ChakiSystem
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(317, 223);
+            this.label9.Location = new System.Drawing.Point(288, 214);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(115, 20);
             this.label9.TabIndex = 17;

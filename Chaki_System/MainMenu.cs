@@ -8,6 +8,9 @@ namespace ChakiSystem
     public partial class MainMenu : Form
     {
         SQLiteConnection MainCon = new SQLiteConnection("Data Source=HCS.db");
+
+        public static string CD = "";
+
         public MainMenu()
         {
             InitializeComponent();
@@ -53,11 +56,9 @@ namespace ChakiSystem
             //DBに接続
             MainCon.Open();
 
+
             using (SQLiteTransaction trans = MainCon.BeginTransaction())
             {
-                //CDにnullを設定
-                string CD = null;
-
                 SQLiteCommand cmd = MainCon.CreateCommand();
 
                 //SQL実行　名前で検索
@@ -65,6 +66,7 @@ namespace ChakiSystem
 
                 //名前のパラメータ定義
                 cmd.Parameters.Add("Name", DbType.String);
+
                 //名前パラメータ
                 cmd.Parameters["Name"].Value = LoginMenu.Num;
 
@@ -74,8 +76,9 @@ namespace ChakiSystem
                 while(reader.Read())
                 {
                     CD = reader.GetValue(0).ToString();
-                    NumberLable.Text = CD;
                 }
+
+                NumberLable.Text = CD;
             }
         }
 
@@ -103,6 +106,14 @@ namespace ChakiSystem
 
             Delete del = new Delete();
             del.Show();
+        }
+
+        private void Appo_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+
+            Appo apo = new Appo();
+            apo.Show();
         }
     }
 }

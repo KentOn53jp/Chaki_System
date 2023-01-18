@@ -14,6 +14,7 @@ namespace ChakiSystem
 
         //NameTextに入力された文字を入れる変数
         public static string Num = "";
+
         public LoginMenu()
         {
             InitializeComponent();
@@ -88,7 +89,7 @@ namespace ChakiSystem
             using (SQLiteCommand command = LoginCon.CreateCommand())
             {
                 command.CommandText =
-                    "create table IF NOT EXISTS t_product(CD INTEGER  PRIMARY KEY AUTOINCREMENT, Name TEXT, Address TEXT, PhoneNumber INTEGER,  Birhtday INTEGER, Pass TEXT)";
+                    "create table IF NOT EXISTS t_product(CD INTEGER  PRIMARY KEY AUTOINCREMENT, Name TEXT, Address TEXT, PhoneNumber TEXT,  Birhtday TEXT, Pass TEXT)";
                 command.ExecuteNonQuery();
             }
             LoginCon.Close();

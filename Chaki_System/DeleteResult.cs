@@ -23,7 +23,8 @@ namespace ChakiSystem
         /// <param name="e"></param>
         private void CompleteButton_Click(object sender, EventArgs e)
         {
-            MainMenu main = new MainMenu();
+            //Login
+            LoginMenu log = new LoginMenu();
 
             Delete del = new Delete();
 
@@ -38,10 +39,13 @@ namespace ChakiSystem
                 using (SQLiteTransaction trans = DeleteCon.BeginTransaction())
                 {
                     SQLiteCommand cmd = DeleteCon.CreateCommand();
+
                     // SQL実行　CD検索
                     cmd.CommandText = "DELETE FROM t_product WHERE CD = @CD;";
+
                     // CDのパラメータ定義
                     cmd.Parameters.Add("CD", DbType.Int64);
+
                     // CDのパラメータ
                     cmd.Parameters["CD"].Value = int.Parse(NumberText.Text);
 
@@ -51,7 +55,7 @@ namespace ChakiSystem
                 }
                 
                 this.Visible = false;
-                main.Show();
+                log.Show();
             }
 
             //確認ダイアログのnoを選択した場合

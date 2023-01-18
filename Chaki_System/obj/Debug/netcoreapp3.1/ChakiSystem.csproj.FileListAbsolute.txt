@@ -1,12 +1,4 @@
 C:\Users\s20217064\Desktop\Chaki_System\Chaki_System\obj\Debug\netcoreapp3.1\ChakiSystem.csproj.AssemblyReference.cache
-C:\Users\s20217064\Desktop\Chaki_System\Chaki_System\obj\Debug\netcoreapp3.1\ChakiSystem.Form10.resources
-C:\Users\s20217064\Desktop\Chaki_System\Chaki_System\obj\Debug\netcoreapp3.1\ChakiSystem.Form3.resources
-C:\Users\s20217064\Desktop\Chaki_System\Chaki_System\obj\Debug\netcoreapp3.1\ChakiSystem.Form4.resources
-C:\Users\s20217064\Desktop\Chaki_System\Chaki_System\obj\Debug\netcoreapp3.1\ChakiSystem.Form5.resources
-C:\Users\s20217064\Desktop\Chaki_System\Chaki_System\obj\Debug\netcoreapp3.1\ChakiSystem.Form6.resources
-C:\Users\s20217064\Desktop\Chaki_System\Chaki_System\obj\Debug\netcoreapp3.1\ChakiSystem.Form7.resources
-C:\Users\s20217064\Desktop\Chaki_System\Chaki_System\obj\Debug\netcoreapp3.1\ChakiSystem.Form8.resources
-C:\Users\s20217064\Desktop\Chaki_System\Chaki_System\obj\Debug\netcoreapp3.1\ChakiSystem.Form9.resources
 C:\Users\s20217064\Desktop\Chaki_System\Chaki_System\obj\Debug\netcoreapp3.1\ChakiSystem.Properties.Resources.resources
 C:\Users\s20217064\Desktop\Chaki_System\Chaki_System\obj\Debug\netcoreapp3.1\ChakiSystem.csproj.GenerateResource.cache
 C:\Users\s20217064\Desktop\Chaki_System\Chaki_System\obj\Debug\netcoreapp3.1\ChakiSystem.GeneratedMSBuildEditorConfig.editorconfig
@@ -39,3 +31,12 @@ C:\Users\s20217064\Desktop\Chaki_System\Chaki_System\obj\Debug\netcoreapp3.1\Cha
 C:\Users\s20217064\Desktop\Chaki_System\Chaki_System\obj\Debug\netcoreapp3.1\ChakiSystem.genruntimeconfig.cache
 C:\Users\s20217064\Desktop\Chaki_System\Chaki_System\obj\Debug\netcoreapp3.1\ChakiSystem.LoginMenu.resources
 C:\Users\s20217064\Desktop\Chaki_System\Chaki_System\obj\Debug\netcoreapp3.1\ChakiSystem.MainMenu.resources
+C:\Users\s20217064\Desktop\Chaki_System\Chaki_System\obj\Debug\netcoreapp3.1\ChakiSystem.Delete.resources
+C:\Users\s20217064\Desktop\Chaki_System\Chaki_System\obj\Debug\netcoreapp3.1\ChakiSystem.DeleteResult.resources
+C:\Users\s20217064\Desktop\Chaki_System\Chaki_System\obj\Debug\netcoreapp3.1\ChakiSystem.Edit.resources
+C:\Users\s20217064\Desktop\Chaki_System\Chaki_System\obj\Debug\netcoreapp3.1\ChakiSystem.EditResult.resources
+C:\Users\s20217064\Desktop\Chaki_System\Chaki_System\obj\Debug\netcoreapp3.1\ChakiSystem.Register.resources
+C:\Users\s20217064\Desktop\Chaki_System\Chaki_System\obj\Debug\netcoreapp3.1\ChakiSystem.RetryRegister.resources
+C:\Users\s20217064\Desktop\Chaki_System\Chaki_System\obj\Debug\netcoreapp3.1\ChakiSystem.Search.resources
+C:\Users\s20217064\Desktop\Chaki_System\Chaki_System\obj\Debug\netcoreapp3.1\ChakiSystem.SearchResult.resources
+C:\Users\s20217064\Desktop\Chaki_System\Chaki_System\obj\Debug\netcoreapp3.1\ChakiSystem.Appo.resources

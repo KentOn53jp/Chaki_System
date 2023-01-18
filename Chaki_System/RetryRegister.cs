@@ -61,6 +61,7 @@ namespace ChakiSystem
             using (SQLiteTransaction trans = RetryCon.BeginTransaction())
             {
                 SQLiteCommand cmd = RetryCon.CreateCommand();
+
                 // インサート　名前・住所・電話番号・生年月日・パスワードを追加する
                 cmd.CommandText = "INSERT INTO t_product (Name, Address, PhoneNumber, birhtday, Pass) VALUES (@Name, @Address, @PhoneNumber, @Birhtday, @Pass)";
 

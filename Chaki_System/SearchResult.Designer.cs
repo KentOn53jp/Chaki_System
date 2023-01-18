@@ -65,7 +65,6 @@ namespace ChakiSystem
             this.Controls.Add(this.SearchData);
             this.Name = "SearchResult";
             this.Text = "検索結果表示画面";
-            //this.Load += new System.EventHandler(this.Form6_Load);
             ((System.ComponentModel.ISupportInitialize)(this.SearchData)).EndInit();
             this.ResumeLayout(false);
 
