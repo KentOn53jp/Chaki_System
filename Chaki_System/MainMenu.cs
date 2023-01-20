@@ -114,6 +114,8 @@ namespace ChakiSystem
 
             Appo apo = new Appo();
             apo.Show();
+
+            apo.NumberTxt.Text = NumberLable.Text;
         }
     }
 }

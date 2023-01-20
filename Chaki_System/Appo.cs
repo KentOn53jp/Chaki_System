@@ -15,9 +15,26 @@ namespace ChakiSystem
             InitializeComponent();
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        /// <summary>
+        /// コンボボックスのアイテムが変更されたときの処理
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void useInstitution_SelectedIndexChanged(object sender, EventArgs e)
         {
+            useInstitution.SelectedIndex = -1;
+        }
 
+        private void Appo_Load(object sender, EventArgs e)
+        {
+            NumberTxt.ReadOnly = true;
+
+            useInstitution.SelectedIndex = 0;
+        }
+
+        private void CalendarButton_Click(object sender, EventArgs e)
+        {
+            Calender.inputCalende(this, textBox1);
         }
     }
 }

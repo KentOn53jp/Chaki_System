@@ -115,10 +115,13 @@ namespace ChakiSystem
             // 
             // PhoneText
             // 
+            this.PhoneText.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.PhoneText.Location = new System.Drawing.Point(62, 184);
+            this.PhoneText.MaxLength = 15;
             this.PhoneText.Name = "PhoneText";
             this.PhoneText.Size = new System.Drawing.Size(125, 27);
             this.PhoneText.TabIndex = 8;
+            this.PhoneText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PhoneText_KeyPress);
             // 
             // label4
             // 
@@ -131,10 +134,13 @@ namespace ChakiSystem
             // 
             // BirthText
             // 
+            this.BirthText.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.BirthText.Location = new System.Drawing.Point(288, 184);
+            this.BirthText.MaxLength = 4;
             this.BirthText.Name = "BirthText";
             this.BirthText.Size = new System.Drawing.Size(125, 27);
             this.BirthText.TabIndex = 10;
+            this.BirthText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.BirthText_KeyPress);
             // 
             // label5
             // 
@@ -167,18 +173,19 @@ namespace ChakiSystem
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(48, 229);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(139, 20);
+            this.label8.Size = new System.Drawing.Size(127, 20);
             this.label8.TabIndex = 16;
-            this.label8.Text = "例：000-0000-0000";
+            this.label8.Text = "例：12345678910";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(288, 214);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(115, 20);
+            this.label9.Size = new System.Drawing.Size(83, 20);
             this.label9.TabIndex = 17;
-            this.label9.Text = "例：0000-00-00";
+            this.label9.Text = "例：MMdd";
+            //this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // label10
             // 
@@ -192,6 +199,7 @@ namespace ChakiSystem
             // PassText
             // 
             this.PassText.Location = new System.Drawing.Point(62, 314);
+            this.PassText.MaxLength = 8;
             this.PassText.Name = "PassText";
             this.PassText.Size = new System.Drawing.Size(125, 27);
             this.PassText.TabIndex = 19;
@@ -208,6 +216,7 @@ namespace ChakiSystem
             // RetryText
             // 
             this.RetryText.Location = new System.Drawing.Point(286, 314);
+            this.RetryText.MaxLength = 8;
             this.RetryText.Name = "RetryText";
             this.RetryText.Size = new System.Drawing.Size(125, 27);
             this.RetryText.TabIndex = 21;
