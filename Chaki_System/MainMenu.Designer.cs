@@ -82,7 +82,7 @@ namespace ChakiSystem
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(650, 12);
+            this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(69, 20);
             this.label1.TabIndex = 5;
@@ -91,7 +91,7 @@ namespace ChakiSystem
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(720, 12);
+            this.label2.Location = new System.Drawing.Point(82, 9);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(0, 20);
             this.label2.TabIndex = 6;
@@ -99,7 +99,7 @@ namespace ChakiSystem
             // NumberLable
             // 
             this.NumberLable.AutoSize = true;
-            this.NumberLable.Location = new System.Drawing.Point(726, 12);
+            this.NumberLable.Location = new System.Drawing.Point(88, 9);
             this.NumberLable.Name = "NumberLable";
             this.NumberLable.Size = new System.Drawing.Size(17, 20);
             this.NumberLable.TabIndex = 7;
@@ -113,7 +113,7 @@ namespace ChakiSystem
             this.AppoButton.TabIndex = 8;
             this.AppoButton.Text = "予約";
             this.AppoButton.UseVisualStyleBackColor = true;
-            this.AppoButton.Click += new System.EventHandler(this.Appo_Click);
+            this.AppoButton.Click += new System.EventHandler(this.AppoButton_Click);
             // 
             // MainMenu
             // 

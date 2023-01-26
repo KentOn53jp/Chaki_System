@@ -97,6 +97,7 @@ namespace ChakiSystem
             this.Controls.Add(this.DeletDataView);
             this.Name = "DeleteResult";
             this.Text = "削除確認画面";
+            this.Load += new System.EventHandler(this.DeleteResult_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DeletDataView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

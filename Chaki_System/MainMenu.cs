@@ -8,6 +8,7 @@ namespace ChakiSystem
     public partial class MainMenu : Form
     {
         SQLiteConnection MainCon = new SQLiteConnection("Data Source=HCS.db");
+        SQLiteConnection ReserveMainCon = new SQLiteConnection("Data Source=HCS_Appo.db");
 
         public static string CD = "";
 
@@ -108,14 +109,26 @@ namespace ChakiSystem
             del.Show();
         }
 
-        private void Appo_Click(object sender, EventArgs e)
+        private void AppoButton_Click(object sender, EventArgs e)
         {
+            ReserveMainCon.Open();
+
+            using (SQLiteCommand command = ReserveMainCon.CreateCommand())
+            {
+                command.CommandText =
+                    "create table IF NOT EXISTS Apo_product(CD INTEGER, reserve INTEGER PRIMARY KEY AUTOINCREMENT, Jim TEXT, Date TEXT, Time TEXT)";
+                command.ExecuteNonQuery();
+            }
+
+            ReserveMainCon.Close();
+
+            App apo = new App();
+
             this.Visible = false;
 
-            Appo apo = new Appo();
-            apo.Show();
-
             apo.NumberTxt.Text = NumberLable.Text;
+
+            apo.Show();
         }
     }
 }

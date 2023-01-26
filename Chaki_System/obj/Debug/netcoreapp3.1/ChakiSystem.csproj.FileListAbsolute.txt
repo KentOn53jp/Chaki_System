@@ -39,5 +39,7 @@ C:\Users\s20217064\Desktop\Chaki_System\Chaki_System\obj\Debug\netcoreapp3.1\Cha
 C:\Users\s20217064\Desktop\Chaki_System\Chaki_System\obj\Debug\netcoreapp3.1\ChakiSystem.RetryRegister.resources
 C:\Users\s20217064\Desktop\Chaki_System\Chaki_System\obj\Debug\netcoreapp3.1\ChakiSystem.Search.resources
 C:\Users\s20217064\Desktop\Chaki_System\Chaki_System\obj\Debug\netcoreapp3.1\ChakiSystem.SearchResult.resources
-C:\Users\s20217064\Desktop\Chaki_System\Chaki_System\obj\Debug\netcoreapp3.1\ChakiSystem.Appo.resources
 C:\Users\s20217064\Desktop\Chaki_System\Chaki_System\obj\Debug\netcoreapp3.1\ChakiSystem.Calender.resources
+C:\Users\s20217064\Desktop\Chaki_System\Chaki_System\obj\Debug\netcoreapp3.1\ChakiSystem.App.resources
+C:\Users\s20217064\Desktop\Chaki_System\Chaki_System\obj\Debug\netcoreapp3.1\ChakiSystem.AppoRes.resources
+C:\Users\s20217064\Desktop\Chaki_System\Chaki_System\obj\Debug\netcoreapp3.1\ChakiSystem.ReserveManagement.resources

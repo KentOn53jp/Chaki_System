@@ -44,7 +44,7 @@ namespace ChakiSystem
             SQLiteCommand cmd = DeleteCon.CreateCommand();
 
             // DataTableを生成します。
-            var dataTable = new DataTable();
+            DataTable dataTable = new DataTable();
 
             // SQLの実行 CDとパスワードで検索
             cmd.CommandText = "SELECT * FROM t_product WHERE  CD = @CD AND Pass = @Pass";

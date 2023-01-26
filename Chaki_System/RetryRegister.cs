@@ -97,7 +97,7 @@ namespace ChakiSystem
         }
 
         /// <summary>
-        /// 目のラベルを押すと伏字になる
+        /// 目のラベルを押すと伏字を解除する
         /// もう一度押すと伏字になる
         /// </summary>
         /// <param name="sender"></param>

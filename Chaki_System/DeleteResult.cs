@@ -77,5 +77,10 @@ namespace ChakiSystem
             Delete del = new Delete();
             del.Show();
         }
+
+        private void DeleteResult_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

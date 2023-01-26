@@ -40,7 +40,7 @@ namespace ChakiSystem
             // 
             // LoginButton
             // 
-            this.LoginButton.Location = new System.Drawing.Point(317, 254);
+            this.LoginButton.Location = new System.Drawing.Point(307, 282);
             this.LoginButton.Name = "LoginButton";
             this.LoginButton.Size = new System.Drawing.Size(190, 69);
             this.LoginButton.TabIndex = 1;
@@ -50,9 +50,9 @@ namespace ChakiSystem
             // 
             // NewNumberButton
             // 
-            this.NewNumberButton.Location = new System.Drawing.Point(351, 356);
+            this.NewNumberButton.Location = new System.Drawing.Point(600, 376);
             this.NewNumberButton.Name = "NewNumberButton";
-            this.NewNumberButton.Size = new System.Drawing.Size(120, 29);
+            this.NewNumberButton.Size = new System.Drawing.Size(188, 62);
             this.NewNumberButton.TabIndex = 2;
             this.NewNumberButton.Text = "新規会員登録";
             this.NewNumberButton.UseVisualStyleBackColor = true;
