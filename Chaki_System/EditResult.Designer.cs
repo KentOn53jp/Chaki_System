@@ -44,7 +44,6 @@ namespace ChakiSystem
             this.CDText = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.PassText = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.EyeLable = new System.Windows.Forms.Label();
             this.PassResultText = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -57,6 +56,7 @@ namespace ChakiSystem
             this.EditDataView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.EditDataView.Location = new System.Drawing.Point(13, 13);
             this.EditDataView.Name = "EditDataView";
+            this.EditDataView.ReadOnly = true;
             this.EditDataView.RowHeadersVisible = false;
             this.EditDataView.RowHeadersWidth = 51;
             this.EditDataView.RowTemplate.Height = 29;
@@ -115,17 +115,25 @@ namespace ChakiSystem
             // 
             // PhoneText
             // 
+            this.PhoneText.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.PhoneText.Location = new System.Drawing.Point(425, 244);
+            this.PhoneText.MaxLength = 13;
             this.PhoneText.Name = "PhoneText";
+            this.PhoneText.ShortcutsEnabled = false;
             this.PhoneText.Size = new System.Drawing.Size(125, 27);
             this.PhoneText.TabIndex = 7;
+            this.PhoneText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PhoneText_KeyPress);
             // 
             // birthText
             // 
+            this.birthText.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.birthText.Location = new System.Drawing.Point(639, 244);
+            this.birthText.MaxLength = 8;
             this.birthText.Name = "birthText";
+            this.birthText.ShortcutsEnabled = false;
             this.birthText.Size = new System.Drawing.Size(125, 27);
             this.birthText.TabIndex = 8;
+            this.birthText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.birthText_KeyPress);
             // 
             // KeepButton
             // 
@@ -166,11 +174,11 @@ namespace ChakiSystem
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(43, 290);
+            this.label6.Location = new System.Drawing.Point(13, 290);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(64, 20);
+            this.label6.Size = new System.Drawing.Size(130, 20);
             this.label6.TabIndex = 13;
-            this.label6.Text = "パスワード";
+            this.label6.Text = "パスワード(4~8文字)";
             // 
             // PassText
             // 
@@ -178,15 +186,6 @@ namespace ChakiSystem
             this.PassText.Name = "PassText";
             this.PassText.Size = new System.Drawing.Size(125, 27);
             this.PassText.TabIndex = 14;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(13, 347);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(160, 20);
-            this.label7.TabIndex = 15;
-            this.label7.Text = "４文字以上にしてください";
             // 
             // EyeLable
             // 
@@ -222,7 +221,6 @@ namespace ChakiSystem
             this.Controls.Add(this.label9);
             this.Controls.Add(this.PassResultText);
             this.Controls.Add(this.EyeLable);
-            this.Controls.Add(this.label7);
             this.Controls.Add(this.PassText);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.CDText);
@@ -264,7 +262,6 @@ namespace ChakiSystem
         public System.Windows.Forms.TextBox CDText;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox PassText;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label EyeLable;
         private System.Windows.Forms.TextBox PassResultText;
         private System.Windows.Forms.Label label9;

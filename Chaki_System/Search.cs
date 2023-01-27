@@ -24,14 +24,36 @@ namespace ChakiSystem
         /// <param name="e"></param>
         private void SearchButton_Click(object sender, EventArgs e)
         {
+            //データテーブルを生成
+            DataTable dataTable = new DataTable();
 
-            if (PassText.Text == "管理者")
+            //データベース接続
+            SearchCon.Open();
+
+            SQLiteCommand cmd = SearchCon.CreateCommand();
+
+            // SQLの実行　パスワードで検索
+            cmd.CommandText = "SELECT * FROM t_product WHERE Pass = @Pass";
+
+            //パスワードのパラメータ定義
+            cmd.Parameters.Add("Pass", DbType.String);
+
+            //パスワードのパラメータ
+            cmd.Parameters["Pass"].Value = PassText.Text;
+
+            dataTable.Clear();
+            dataTable.Load(cmd.ExecuteReader());
+
+            SearchCon.Close();
+
+            //PassTextが未入力の時エラー
+            if (string.IsNullOrEmpty(PassText.Text))
             {
-                DataTable dataTable = new DataTable();
-
-                SQLiteDataAdapter adapter = new SQLiteDataAdapter("SELECT * FROM t_product", SearchCon);
-
-                adapter.Fill(dataTable);
+                MessageBox.Show("パスワードを入力してください。", "未入力", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            //検索したデータが見つかった場合SearchResult画面に遷移
+            else if (dataTable.Rows.Count == 1)
+            {
 
                 SearchResult searRes = new SearchResult();
 
@@ -40,51 +62,12 @@ namespace ChakiSystem
                 this.Visible = false;
                 searRes.Show();
             }
-
-            else
+            //検索したデータがなかった場合、エラーダイアログを表示
+            else if (dataTable.Rows.Count == 0)
             {
-                //データテーブルを生成
-                DataTable dataTable = new DataTable();
-
-                SearchCon.Open();
-                SQLiteCommand cmd = SearchCon.CreateCommand();
-
-                // SQLの実行　パスワードで検索
-                cmd.CommandText = "SELECT * FROM t_product WHERE Pass = @Pass";
-
-                //パスワードのパラメータ定義
-                cmd.Parameters.Add("Pass", DbType.String);
-
-                //パスワードのパラメータ
-                cmd.Parameters["Pass"].Value = PassText.Text;
-
-                dataTable.Clear();
-                dataTable.Load(cmd.ExecuteReader());
-
-                SearchCon.Close();
-
-                //PassTextが未入力の時エラー
-                if (string.IsNullOrEmpty(PassText.Text))
-                {
-                    MessageBox.Show("パスワードを入力してください。", "未入力", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                //検索したデータが見つかった場合SearchResult画面に遷移
-                else if (dataTable.Rows.Count == 1)
-                {
-
-                    SearchResult searRes = new SearchResult();
-
-                    searRes.SearchData.DataSource = dataTable;
-
-                    this.Visible = false;
-                    searRes.Show();
-                }
-                //検索したデータがなかった場合、エラーダイアログを表示
-                else if (dataTable.Rows.Count == 0)
-                {
-                    MessageBox.Show("パスワードが違います。", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                MessageBox.Show("パスワードが違います。", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        
         }
 
         /// <summary>

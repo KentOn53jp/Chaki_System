@@ -86,6 +86,7 @@ namespace ChakiSystem
             this.Controls.Add(this.ReserveView);
             this.Name = "ReserveManagement";
             this.Text = "予約管理画面";
+            this.Load += new System.EventHandler(this.ReserveManagement_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ReserveView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

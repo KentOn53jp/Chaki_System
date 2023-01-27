@@ -99,6 +99,8 @@ namespace ChakiSystem
         /// <summary>
         /// パスワードの初期状態をを伏字にする
         /// CDは変更できないように読み込みのみにする
+        /// 
+        /// データグリッドビューのカラム名を変更
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -107,6 +109,13 @@ namespace ChakiSystem
             CDText.ReadOnly = true;
             PassText.PasswordChar = '*';
             PassResultText.PasswordChar = '*';
+
+            EditDataView.Columns["CD"].HeaderText = "会員番号";
+            EditDataView.Columns["Name"].HeaderText = "氏名";
+            EditDataView.Columns["Address"].HeaderText = "住所";
+            EditDataView.Columns["PhoneNumber"].HeaderText = "電話番号";
+            EditDataView.Columns["Birhtday"].HeaderText = "誕生日";
+            EditDataView.Columns["Pass"].HeaderText = "パスワード";
         }
 
         /// <summary>
@@ -126,6 +135,36 @@ namespace ChakiSystem
             {
                 PassText.PasswordChar = '*';
                 isOpen = false;
+            }
+        }
+
+        private void PhoneText_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //バックスペースが押された時は有効（Deleteキーも有効）
+            if (e.KeyChar == '\b')
+            {
+                return;
+            }
+
+            //数値0～9以外が押された時はイベントをキャンセルする
+            if ((e.KeyChar < '0' || '9' < e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void birthText_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //バックスペースが押された時は有効（Deleteキーも有効）
+            if (e.KeyChar == '\b')
+            {
+                return;
+            }
+
+            //数値0～9以外が押された時はイベントをキャンセルする
+            if ((e.KeyChar < '0' || '9' < e.KeyChar))
+            {
+                e.Handled = true;
             }
         }
     }

@@ -80,7 +80,7 @@ namespace ChakiSystem
 
         private void DeleteResult_Load(object sender, EventArgs e)
         {
-
+            NumberText.ReadOnly = true;
         }
     }
 }

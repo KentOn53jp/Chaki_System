@@ -14,6 +14,13 @@ namespace ChakiSystem
             InitializeComponent();
         }
 
+        /// <summary>
+        /// 戻るボタン
+        /// 
+        /// 予約画面に戻る
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BackButton_Click(object sender, EventArgs e)
         {
             App apo = new App();
@@ -21,10 +28,19 @@ namespace ChakiSystem
             apo.Show();
         }
 
+        /// <summary>
+        /// 会員番号と予約番号で検索
+        /// 
+        /// 検索ヒットした場合、削除確認をしてから削除
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void CancelButton_Click(object sender, EventArgs e)
         {
+            //データベース接続
             AppoResDelCon.Open();
 
+            //未入力の場合エラーメッセージ
             if (string.IsNullOrEmpty(ResText.Text))
             {
                 MessageBox.Show("入力されていない項目があります。", "未入力", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -33,17 +49,17 @@ namespace ChakiSystem
             {
                 SQLiteCommand cmd = AppoResDelCon.CreateCommand();
 
-                // DataTableを生成します。
+                // DataTableを生成
                 DataTable dataTable = new DataTable();
 
-                // SQLの実行　パスワードで検索
+                // SQLの実行　会員番号と予約番号でで検索
                 cmd.CommandText = "SELECT * FROM Apo_product WHERE CD = @CD AND reserve = @reserve";
 
-                //パスワードのパラメータ定義
+                //会員番号・予約番号のパラメータ定義
                 cmd.Parameters.Add("CD", DbType.String);
                 cmd.Parameters.Add("reserve", DbType.String);
 
-                //パスワードのパラメータ
+                //会員番号・予約番号のパラメータ
                 cmd.Parameters["CD"].Value = MainMenu.CD;
                 cmd.Parameters["reserve"].Value = ResText.Text;
 
@@ -56,7 +72,7 @@ namespace ChakiSystem
                 }
                 else
                 {
-                    // 確認ダイアログ
+                    // 削除確認ダイアログ
                     DialogResult result = MessageBox.Show("本当に削除しますか？", "削除", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
                     // 確認ダイアログのyesを選択した場合
@@ -65,14 +81,14 @@ namespace ChakiSystem
 
                         using (SQLiteTransaction trans = AppoResDelCon.BeginTransaction())
                         {
-                            // SQL実行　CD検索
+                            // SQL実行　会員番号・予約番号の検索
                             cmd.CommandText = "DELETE FROM Apo_product WHERE CD = @CD AND reserve = @reserve;";
 
-                            // CDのパラメータ定義
+                            // 会員番号・予約番号のパラメータ定義
                             cmd.Parameters.Add("CD", DbType.Int64);
                             cmd.Parameters.Add("reserve", DbType.String);
 
-                            // CDのパラメータ
+                            // 会員番号・予約番号のパラメータ
                             cmd.Parameters["CD"].Value = int.Parse(MainMenu.CD);
                             cmd.Parameters["reserve"].Value = ResText.Text;
 
@@ -81,6 +97,7 @@ namespace ChakiSystem
                             trans.Commit();
                         }
 
+                        //メインメニューに遷移
                         MainMenu main = new MainMenu();
                         this.Visible = false;
                         main.Show();
@@ -89,6 +106,7 @@ namespace ChakiSystem
                     //確認ダイアログのnoを選択した場合
                     else if (result == DialogResult.No)
                     {
+                        //メインメニューに遷移
                         MainMenu main = new MainMenu();
                         this.Visible = false;
                         main.Show();
@@ -96,6 +114,15 @@ namespace ChakiSystem
                 }
             }
             AppoResDelCon.Close();
+        }
+
+        private void ReserveManagement_Load(object sender, EventArgs e)
+        {
+            ReserveView.Columns["CD"].HeaderText = "会員番号";
+            ReserveView.Columns["reserve"].HeaderText = "予約番号";
+            ReserveView.Columns["Jim"].HeaderText = "利用施設";
+            ReserveView.Columns["Date"].HeaderText = "予約日";
+            ReserveView.Columns["Time"].HeaderText = "予約時間";
         }
     }
 }

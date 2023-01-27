@@ -51,12 +51,14 @@ namespace ChakiSystem
             cmd.Parameters["Pass"].Value = PassText.Text;
 
             dataTable.Clear();
+
+            //データテーブルに格納
             dataTable.Load(cmd.ExecuteReader());
 
             LoginCon.Close();
 
             //どちらかのテキストボックスが空白の場合、エラーダイアログを表示
-            if (string.IsNullOrEmpty(NameText.Text) || string.IsNullOrEmpty(PassText.Text)) 
+            if (string.IsNullOrEmpty(NameText.Text) || string.IsNullOrEmpty(PassText.Text))
             {
                 MessageBox.Show("氏名、パスワードを入力してください。", "未入力", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }

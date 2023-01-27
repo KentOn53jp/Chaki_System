@@ -46,7 +46,6 @@ namespace ChakiSystem
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.PassText = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
             this.RetryText = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.EyeLabel = new System.Windows.Forms.Label();
@@ -136,7 +135,7 @@ namespace ChakiSystem
             // 
             this.BirthText.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.BirthText.Location = new System.Drawing.Point(288, 184);
-            this.BirthText.MaxLength = 4;
+            this.BirthText.MaxLength = 8;
             this.BirthText.Name = "BirthText";
             this.BirthText.Size = new System.Drawing.Size(125, 27);
             this.BirthText.TabIndex = 10;
@@ -156,9 +155,8 @@ namespace ChakiSystem
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(278, 79);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(291, 20);
+            this.label6.Size = new System.Drawing.Size(0, 20);
             this.label6.TabIndex = 14;
-            this.label6.Text = "例：北海道 札幌市 白石区 菊水６条３丁目";
             // 
             // label7
             // 
@@ -171,7 +169,7 @@ namespace ChakiSystem
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(48, 229);
+            this.label8.Location = new System.Drawing.Point(63, 214);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(127, 20);
             this.label8.TabIndex = 16;
@@ -182,19 +180,18 @@ namespace ChakiSystem
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(288, 214);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(83, 20);
+            this.label9.Size = new System.Drawing.Size(103, 20);
             this.label9.TabIndex = 17;
-            this.label9.Text = "例：MMdd";
-            //this.label9.Click += new System.EventHandler(this.label9_Click);
+            this.label9.Text = "例：20020531";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(94, 291);
+            this.label10.Location = new System.Drawing.Point(57, 291);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(64, 20);
+            this.label10.Size = new System.Drawing.Size(130, 20);
             this.label10.TabIndex = 18;
-            this.label10.Text = "パスワード";
+            this.label10.Text = "パスワード(4~8文字)";
             // 
             // PassText
             // 
@@ -203,15 +200,7 @@ namespace ChakiSystem
             this.PassText.Name = "PassText";
             this.PassText.Size = new System.Drawing.Size(125, 27);
             this.PassText.TabIndex = 19;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(32, 353);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(170, 20);
-            this.label11.TabIndex = 20;
-            this.label11.Text = "４文字以上にしてください。";
+            //this.PassText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PassText_KeyPress);
             // 
             // RetryText
             // 
@@ -248,7 +237,6 @@ namespace ChakiSystem
             this.Controls.Add(this.EyeLabel);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.RetryText);
-            this.Controls.Add(this.label11);
             this.Controls.Add(this.PassText);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
@@ -293,7 +281,6 @@ namespace ChakiSystem
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox PassText;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox RetryText;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label EyeLabel;

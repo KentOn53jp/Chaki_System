@@ -109,12 +109,19 @@ namespace ChakiSystem
             del.Show();
         }
 
+        /// <summary>
+        /// 予約ボタン
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void AppoButton_Click(object sender, EventArgs e)
         {
+            //データベース接続
             ReserveMainCon.Open();
 
             using (SQLiteCommand command = ReserveMainCon.CreateCommand())
             {
+                //データベースを作成、会員番号・予約番号・利用施設・予約日・予約時間
                 command.CommandText =
                     "create table IF NOT EXISTS Apo_product(CD INTEGER, reserve INTEGER PRIMARY KEY AUTOINCREMENT, Jim TEXT, Date TEXT, Time TEXT)";
                 command.ExecuteNonQuery();
@@ -122,8 +129,8 @@ namespace ChakiSystem
 
             ReserveMainCon.Close();
 
+            //予約画面に遷移
             App apo = new App();
-
             this.Visible = false;
 
             apo.NumberTxt.Text = NumberLable.Text;

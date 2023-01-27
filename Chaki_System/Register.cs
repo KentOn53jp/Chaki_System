@@ -43,13 +43,13 @@ namespace ChakiSystem
             int Max = 3;
             if(PassText.TextLength < Max)
             {
-                MessageBox.Show("４文字以上入力してください。","エラー", MessageBoxButtons.OK,MessageBoxIcon.Error);
+                MessageBox.Show("パスワードを４文字以上入力してください。","エラー", MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
-            if(PassText.Text != RetryText.Text)
+            else if(PassText.Text != RetryText.Text)
             {
                 MessageBox.Show("パスワードが間違っています。", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            if(string.IsNullOrEmpty(NameText.Text) || string.IsNullOrEmpty(AddressText.Text) || string.IsNullOrEmpty(PhoneText.Text)
+            else if(string.IsNullOrEmpty(NameText.Text) || string.IsNullOrEmpty(AddressText.Text) || string.IsNullOrEmpty(PhoneText.Text)
                         || string.IsNullOrEmpty(BirthText.Text) || string.IsNullOrEmpty(RetryText.Text))
             {
                 MessageBox.Show("入力されていない項目があります。", "未入力", MessageBoxButtons.OK, MessageBoxIcon.Error);

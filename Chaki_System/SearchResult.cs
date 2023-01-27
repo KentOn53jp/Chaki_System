@@ -21,5 +21,15 @@ namespace ChakiSystem
             MainMenu main = new MainMenu();
             main.Show();
         }
+
+        private void SearchResult_Load(object sender, EventArgs e)
+        {
+            SearchData.Columns["CD"].HeaderText = "会員番号";
+            SearchData.Columns["Name"].HeaderText = "氏名";
+            SearchData.Columns["Address"].HeaderText = "住所";
+            SearchData.Columns["PhoneNumber"].HeaderText = "電話番号";
+            SearchData.Columns["Birhtday"].HeaderText = "誕生日";
+            SearchData.Columns["Pass"].HeaderText = "パスワード";
+        }
     }
 }
